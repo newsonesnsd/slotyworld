@@ -1,6 +1,6 @@
 # Slotyworld Project 
-INT203 Database Management Systems 
-School of Information Technology, KMUTT
+INT203 Database Management Systems <br />
+School of Information Technology, KMUTT <br />
 
 
 Member
