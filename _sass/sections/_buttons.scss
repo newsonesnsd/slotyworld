@@ -1,0 +1,31 @@
+// Button Styles
+.btn {
+  font-size: 14px;
+  border: 0;
+  text-transform: uppercase;
+  @include heading-font;
+}
+
+.btn-lg {
+  padding: 15px 26px;
+}
+
+.btn-sm {
+  font-size: 10px;
+}
+
+.btn-primary {
+  border-bottom: 3px solid $btn-primary-border;
+  &:active,
+  &:hover {
+    border-bottom: 3px solid darken($btn-primary-border, 10%);
+  }
+}
+
+.btn-secondary {
+  border-bottom: 3px solid $btn-secondary-border;
+  &:active,
+  &:hover {
+    border-bottom: 3px solid darken($btn-secondary-border, 10%);
+  }
+}
