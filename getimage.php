@@ -11,11 +11,13 @@
     mysql_close($link);
     header("Content-type: image/jpeg");
     // show image
-    echo $row['dvdimage'];
+    cho $row['dvdimage'];
 ?>
 
 
-// how to use
-<!-- <body>
-    <img src="getImage.php?id=1" width="175" height="200" />
-</body> -->
+<!-- how to use -->
+<!--
+    <body>
+        <img src="getImage.php?id=1" width="175" height="200" />
+    </body>
+-->
