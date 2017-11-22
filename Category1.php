@@ -85,21 +85,30 @@
 
           <div class="row">
             <?php
-                $servername = "35.163.12.144";
+                $host = "35.163.12.144";
                 $username = "int203";
                 $password = "lovesql";
+                $database = "int203";
 
                 // Create connection
-                $conn = new mysqli($servername, $username, $password);
-                $objDB = mysql_select_db(int203);
-                $sql = select * from product;
-
-               // Check connection
-                if ($conn->connect_error) {
-                    die("Connection failed: " . $conn->connect_error);
+                $conn = mysql_connect($host, $username, $password);
+                if(!$conn){
+                  echo "เชื่อมต่อไม่ได้";
                 }
-                echo "Connected successfully";
+                // $objDB = mysql_select_db(int203);
+                $query = "select * from Product";
+                $data = mysql_query($query);
+                while($show = mysql_fetch_array($data)){
+                  echo $show[0];
+                }
+               // // Check connection
+               //  if ($conn->connect_error) {
+               //      die("Connection failed: " . $conn->connect_error);
+               //  }
+               //  echo "Connected successfully";
+
               ?>
+
             <div class="col-lg-4 col-md-6 mb-4">
               <div class="card h-100">
                 <a href="#"><img class="card-img-top" src="http://placehold.it/700x400" alt=""></a>
@@ -116,9 +125,11 @@
               </div>
             </div>
 
-            <?php
-              while($objResult = mysql_fetch_array($))
-             ?>
+            <!-- <?php
+              // while($objResult = mysql_fetch_array($objQuery)){
+              //   <h5><?php echo$objResult["price"] ?></h5>
+              // }
+             ?> -->
 
             <div class="col-lg-4 col-md-6 mb-4">
               <div class="card h-100">
