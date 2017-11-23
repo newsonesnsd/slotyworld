@@ -25,13 +25,5 @@
       echo "0 results";
   }
   $conn->close();
-    // while($show = mysql_fetch_array($data)){
-    //   echo $show->price;
-    // }
-   // // Check connection
-   //  if ($conn->connect_error) {
-   //      die("Connection failed: " . $conn->connect_error);
-   //  }
-   //  echo "Connected successfully";
 
   ?>
