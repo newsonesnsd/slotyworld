@@ -26,6 +26,7 @@
 			if(!$conn){
 				echo "เชื่อมต่อไม่ได้";
 			}
+			mysqli_set_charset($conn,"utf8");
 		?>
     <!-- Navigation -->
 
@@ -312,7 +313,7 @@
               </div>
             </div>
 
-            
+
                 <div class="card-footer">
                   <small class="text-muted">&#9733; &#9733; &#9733; &#9733; &#9734;</small>
                 </div>

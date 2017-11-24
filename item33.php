@@ -123,7 +123,7 @@
               <h3 class="card-title">
                 <?php
                 //statement
-                $sql = "select productname from Product where productid = 20002";
+                $sql = "select productname from Product where productid = 30003";
                 $result = $conn->query($sql);
                 if ($result->num_rows > 0) {
                     // output data of each row
@@ -137,7 +137,7 @@
               <h4>
                 <?php
                 //statement
-                $sql = "select price from Product where productid = 20002";
+                $sql = "select price from Product where productid = 30003";
                 $result = $conn->query($sql);
                 if ($result->num_rows > 0) {
                     // output data of each row
@@ -152,7 +152,7 @@
               <p class="card-text">
                 <?php
                 //statement
-                $sql = "select details from Product where productid = 20002";
+                $sql = "select details from Product where productid = 30003";
                 $result = $conn->query($sql);
                 if ($result->num_rows > 0) {
                     // output data of each row
@@ -177,7 +177,7 @@
               <p>
                 <?php
                   //statement
-                  $sql = "select commentdetail from ProductComment where productId = 20002";
+                  $sql = "select commentdetail from ProductComment where productId = 30003";
                   $result = $conn->query($sql);
                   if ($result->num_rows > 0) {
                       // output data of each row
@@ -207,7 +207,7 @@
               <p>
                 <?php
                 //statement
-                $sql = "select commentdetail from ProductComment where productid = 20002";
+                $sql = "select commentdetail from ProductComment where productid = 30003";
                 $result = $conn->query($sql);
                 if ($result->num_rows > 0) {
                     // output data of each row
@@ -222,7 +222,7 @@
               <p>
                 <?php
                 //statement
-                $sql = "select commentdetail from ProductComment where productid = 20002";
+                $sql = "select commentdetail from ProductComment where productid = 30003";
                 $result = $conn->query($sql);
                 if ($result->num_rows > 0) {
                     // output data of each row
