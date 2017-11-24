@@ -11,6 +11,19 @@
     <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
     <!-- Custom styles for this template -->
 	<link href="assets/css/shop-homepage.css" rel="stylesheet">
+	<?php
+		$host = "35.163.12.144";
+		$username = "int203";
+		$password = "lovesql";
+		$database = "int203";
+		$dbname = "int203";
+
+		// Create connection
+		$conn = new mysqli($host, $username, $password, $dbname);
+		if(!$conn){
+			echo "เชื่อมต่อไม่ได้";
+		}
+	?>
 </head>
 
 <body>
@@ -51,9 +64,45 @@
         	<div class="col-lg-3">
 				<h1 class="my-4">SLOTYWORLD SHOP</h1>
           		<div class="list-group">
-            		<a href="category1.php" class="list-group-item">Category 1</a>
-            		<a href="category2.php" class="list-group-item">Category 2</a>
-            		<a href="category3.php" class="list-group-item">Category 3</a>
+            		<a href="category1.php" class="list-group-item">
+						<?php
+							//statement
+							$sql = "select categoryname from Category where categoryname = 'Hardware'";
+							$result = $conn->query($sql);
+							if ($result->num_rows > 0) {
+								// output data of each row
+								while($row = $result->fetch_assoc()) {
+									echo $row["categoryname"];
+								}
+							}
+						?>
+					</a>
+            		<a href="category2.php" class="list-group-item">
+						<?php
+							//statement
+							$sql = "select categoryname from Category where categoryname = 'Software'";
+							$result = $conn->query($sql);
+							if ($result->num_rows > 0) {
+								// output data of each row
+								while($row = $result->fetch_assoc()) {
+									echo $row["categoryname"];
+								}
+							}
+						?>
+            		</a>
+            		<a href="category3.php" class="list-group-item">
+						<?php
+							//statement
+							$sql = "select categoryname from Category where categoryname = 'Others'";
+							$result = $conn->query($sql);
+							if ($result->num_rows > 0) {
+								// output data of each row
+								while($row = $result->fetch_assoc()) {
+									echo $row["categoryname"];
+								}
+							}
+						?>
+            		</a>
           		</div>
         	</div>
         <!-- /.col-lg-3 -->
