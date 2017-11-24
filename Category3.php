@@ -26,6 +26,7 @@
 			if(!$conn){
 				echo "เชื่อมต่อไม่ได้";
 			}
+      mysqli_set_charset($conn,"utf8");
 		?>
     <!-- Navigation -->
 
