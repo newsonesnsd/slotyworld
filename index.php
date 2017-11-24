@@ -18,7 +18,7 @@
 
     <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
     	<div class="container">
-        	<a class="navbar-brand" href="#">Sloty</a>
+        	<a class="navbar-brand" href="http://35.163.12.144/slotyworld">Sloty</a>
         	<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
           		<span class="navbar-toggler-icon"></span>
         	</button>
