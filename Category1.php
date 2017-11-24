@@ -60,24 +60,53 @@
     <div class="container">
     	<div class="row">
         	<div class="col-lg-3">
-				<h1 class="my-4">Shop Name</h1>
+				<h1 class="my-4">SLOTYWORLD SHOP</h1>
           		<div class="list-group">
             		<a href="#" class="list-group-item">
+									<!-- $result = mysql_query("SELECT option_value FROM wp_10_options WHERE option_name='homepage' LIMIT 1");
+									$row = mysql_fetch_assoc($result);
+									echo $row['option_value']; -->
 									<?php
 									//statement
-									$sql = "select categoryName from Category";
+									$sql = "select categoryname from category where categoryname = 'Hardware'";
 									$result = $conn->query($sql);
 									if ($result->num_rows > 0) {
 											// output data of each row
 											while($row = $result->fetch_assoc()) {
-													echo $row["categoryName"];
+													echo $row["categoryname"];
 											}
 									}
 
 									?>
             		</a>
-            		<a href="#" class="list-group-item">Category 2</a>
-            		<a href="#" class="list-group-item">Category 3</a>
+            		<a href="#" class="list-group-item">
+									<?php
+									//statement
+									$sql = "select categoryname from category where categoryname = 'Software'";
+									$result = $conn->query($sql);
+									if ($result->num_rows > 0) {
+											// output data of each row
+											while($row = $result->fetch_assoc()) {
+													echo $row["categoryname"];
+											}
+									}
+
+									?>
+            		</a>
+            		<a href="#" class="list-group-item">
+									<?php
+									//statement
+									$sql = "select categoryname from category where categoryname = 'Others'";
+									$result = $conn->query($sql);
+									if ($result->num_rows > 0) {
+											// output data of each row
+											while($row = $result->fetch_assoc()) {
+													echo $row["categoryname"];
+											}
+									}
+
+									?>
+            		</a>
           		</div>
         	</div>
         <!-- /.col-lg-3 -->
@@ -120,12 +149,12 @@
                     <a href="item1.html">
 											<?php
 											//statement
-											$sql = "select productName from Product";
+											$sql = "select productname from product where productid = 10001";
 											$result = $conn->query($sql);
 											if ($result->num_rows > 0) {
 										      // output data of each row
 										      while($row = $result->fetch_assoc()) {
-										          echo $row["productName"];
+										          echo $row["productname"];
 										      }
 										  }
 
@@ -135,7 +164,7 @@
                   <h5>
 										<?php
 										//statement
-										$sql = "select price from Product";
+										$sql = "select price from product where productid = 10001";
 										$result = $conn->query($sql);
 										if ($result->num_rows > 0) {
 												// output data of each row
@@ -150,12 +179,12 @@
                   <p class="card-text">
 										<?php
 										//statement
-										$sql = "select description from Product";
+										$sql = "select details from product where productid = 10001";
 										$result = $conn->query($sql);
 										if ($result->num_rows > 0) {
 												// output data of each row
 												while($row = $result->fetch_assoc()) {
-														echo $row["description"];
+														echo $row["details"];
 												}
 										}
 
@@ -179,10 +208,49 @@
                 <a href="#"><img class="card-img-top" src="http://placehold.it/700x400" alt=""></a>
                 <div class="card-body">
                   <h4 class="card-title">
-                    <a href="#">Item Two</a>
+                    <a href="#">
+											<?php
+											//statement
+											$sql = "select productname from product where productid = 10002";
+											$result = $conn->query($sql);
+											if ($result->num_rows > 0) {
+										      // output data of each row
+										      while($row = $result->fetch_assoc()) {
+										          echo $row["productname"];
+										      }
+										  }
+
+											?>
+                    </a>
                   </h4>
-                  <h5>$24.99</h5>
-                  <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Amet numquam aspernatur! Lorem ipsum dolor sit amet.</p>
+                  <h5>
+										<?php
+										//statement
+										$sql = "select price from product where productid = 10002";
+										$result = $conn->query($sql);
+										if ($result->num_rows > 0) {
+												// output data of each row
+												while($row = $result->fetch_assoc()) {
+														echo $row["price"];
+												}
+										}
+
+										?>
+                  </h5>
+                  <p class="card-text">
+										<?php
+										//statement
+										$sql = "select details from product where productid = 10002";
+										$result = $conn->query($sql);
+										if ($result->num_rows > 0) {
+												// output data of each row
+												while($row = $result->fetch_assoc()) {
+														echo $row["details"];
+												}
+										}
+
+										?>
+                  </p>
                 </div>
                 <div class="card-footer">
                   <small class="text-muted">&#9733; &#9733; &#9733; &#9733; &#9734;</small>
@@ -195,10 +263,49 @@
                 <a href="#"><img class="card-img-top" src="http://placehold.it/700x400" alt=""></a>
                 <div class="card-body">
                   <h4 class="card-title">
-                    <a href="#">Item Three</a>
+                    <a href="#">
+											<?php
+											//statement
+											$sql = "select productname from product where productid = 10003";
+											$result = $conn->query($sql);
+											if ($result->num_rows > 0) {
+													// output data of each row
+													while($row = $result->fetch_assoc()) {
+															echo $row["productname"];
+													}
+											}
+
+											?>
+                    </a>
                   </h4>
-                  <h5>$24.99</h5>
-                  <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Amet numquam aspernatur!</p>
+                  <h5>
+										<?php
+										//statement
+										$sql = "select price from product where productid = 10003";
+										$result = $conn->query($sql);
+										if ($result->num_rows > 0) {
+												// output data of each row
+												while($row = $result->fetch_assoc()) {
+														echo $row["price"];
+												}
+										}
+
+										?>
+                  </h5>
+                  <p class="card-text">
+										<?php
+										//statement
+										$sql = "select details from product where productid = 10003";
+										$result = $conn->query($sql);
+										if ($result->num_rows > 0) {
+												// output data of each row
+												while($row = $result->fetch_assoc()) {
+														echo $row["details"];
+												}
+										}
+
+										?>
+                  </p>
                 </div>
                 <div class="card-footer">
                   <small class="text-muted">&#9733; &#9733; &#9733; &#9733; &#9734;</small>
@@ -211,10 +318,49 @@
                 <a href="#"><img class="card-img-top" src="http://placehold.it/700x400" alt=""></a>
                 <div class="card-body">
                   <h4 class="card-title">
-                    <a href="#">Item Four</a>
+                    <a href="#">
+											<?php
+											//statement
+											$sql = "select productname from product where productid = 10004";
+											$result = $conn->query($sql);
+											if ($result->num_rows > 0) {
+													// output data of each row
+													while($row = $result->fetch_assoc()) {
+															echo $row["productname"];
+													}
+											}
+
+											?>
+                    </a>
                   </h4>
-                  <h5>$24.99</h5>
-                  <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Amet numquam aspernatur!</p>
+                  <h5>
+										<?php
+										//statement
+										$sql = "select price from product where productid = 10004";
+										$result = $conn->query($sql);
+										if ($result->num_rows > 0) {
+												// output data of each row
+												while($row = $result->fetch_assoc()) {
+														echo $row["price"];
+												}
+										}
+
+										?>
+                  </h5>
+                  <p class="card-text">
+										<?php
+										//statement
+										$sql = "select details from product where productid = 10004";
+										$result = $conn->query($sql);
+										if ($result->num_rows > 0) {
+												// output data of each row
+												while($row = $result->fetch_assoc()) {
+														echo $row["details"];
+												}
+										}
+
+										?>
+                  </p>
                 </div>
                 <div class="card-footer">
                   <small class="text-muted">&#9733; &#9733; &#9733; &#9733; &#9734;</small>
@@ -227,10 +373,49 @@
                 <a href="#"><img class="card-img-top" src="http://placehold.it/700x400" alt=""></a>
                 <div class="card-body">
                   <h4 class="card-title">
-                    <a href="#">Item Five</a>
+                    <a href="#">
+											<?php
+											//statement
+											$sql = "select productname from product where productid = 10005";
+											$result = $conn->query($sql);
+											if ($result->num_rows > 0) {
+													// output data of each row
+													while($row = $result->fetch_assoc()) {
+															echo $row["productname"];
+													}
+											}
+
+											?>
+                    </a>
                   </h4>
-                  <h5>$24.99</h5>
-                  <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Amet numquam aspernatur! Lorem ipsum dolor sit amet.</p>
+                  <h5>
+										<?php
+										//statement
+										$sql = "select price from product where productid = 10005";
+										$result = $conn->query($sql);
+										if ($result->num_rows > 0) {
+												// output data of each row
+												while($row = $result->fetch_assoc()) {
+														echo $row["price"];
+												}
+										}
+
+										?>
+                  </h5>
+                  <p class="card-text">
+										<?php
+										//statement
+										$sql = "select details from product where productid = 10005";
+										$result = $conn->query($sql);
+										if ($result->num_rows > 0) {
+												// output data of each row
+												while($row = $result->fetch_assoc()) {
+														echo $row["details"];
+												}
+										}
+
+										?>
+                  </p>
                 </div>
                 <div class="card-footer">
                   <small class="text-muted">&#9733; &#9733; &#9733; &#9733; &#9734;</small>
@@ -243,10 +428,49 @@
                 <a href="#"><img class="card-img-top" src="http://placehold.it/700x400" alt=""></a>
                 <div class="card-body">
                   <h4 class="card-title">
-                    <a href="#">Item Six</a>
+                    <a href="#">
+											<?php
+											//statement
+											$sql = "select productname from product where productid = 10006";
+											$result = $conn->query($sql);
+											if ($result->num_rows > 0) {
+													// output data of each row
+													while($row = $result->fetch_assoc()) {
+															echo $row["productname"];
+													}
+											}
+
+											?>
+                    </a>
                   </h4>
-                  <h5>$24.99</h5>
-                  <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Amet numquam aspernatur!</p>
+                  <h5>
+										<?php
+										//statement
+										$sql = "select price from product where productid = 10006";
+										$result = $conn->query($sql);
+										if ($result->num_rows > 0) {
+												// output data of each row
+												while($row = $result->fetch_assoc()) {
+														echo $row["price"];
+												}
+										}
+
+										?>
+                  </h5>
+                  <p class="card-text">
+										<?php
+										//statement
+										$sql = "select details from product where productid = 10006";
+										$result = $conn->query($sql);
+										if ($result->num_rows > 0) {
+												// output data of each row
+												while($row = $result->fetch_assoc()) {
+														echo $row["details"];
+												}
+										}
+
+										?>
+                  </p>
                 </div>
                 <div class="card-footer">
                   <small class="text-muted">&#9733; &#9733; &#9733; &#9733; &#9734;</small>
