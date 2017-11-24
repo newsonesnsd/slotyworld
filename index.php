@@ -12,6 +12,9 @@
     <!-- Custom styles for this template -->
 	<link href="assets/css/shop-homepage.css" rel="stylesheet">
 	<?php
+	if (session_status() == PHP_SESSION_NONE) {
+		    session_start();
+	}
 		$host = "35.163.12.144";
 		$username = "int203";
 		$password = "lovesql";
@@ -51,7 +54,11 @@
               			<a class="nav-link" href="about/index.html">About</a>
             		</li>
             		<li class="nav-item">
-              			<a class="nav-link" href="login.php">Login</a>
+						<?php if(isset($_SESSION['wppa'])):?>
+						<span>Login as <?php echo $_SESSION['wppa']['username']; ?>(<a class="nav-link" href="logout.php">Logout</a>)</span>
+						<?php else: ?>
+						<a class="nav-link" href="login.php">Login</a>
+						<?php endif; ?>
 
             		</li>
           		</ul>

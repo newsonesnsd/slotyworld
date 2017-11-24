@@ -7,7 +7,7 @@
         <style media="screen">
         /*<link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">*/
         @import url('https://fonts.googleapis.com/css?family=Nunito');
-@import url('https://fonts.googleapis.com/css?family=Poiret+One');
+        @import url('https://fonts.googleapis.com/css?family=Poiret+One');
 
 body, html {
 	height: 100%;
@@ -95,10 +95,12 @@ body, html {
 			<h1 class="logo-caption"><span class="tweak">L</span>ogin</h1>
 		</div><!-- /.logo -->
 		<div class="controls">
-			<input type="text" name="username" placeholder="Username" class="form-control" />
-			<input type="text" name="username" placeholder="Password" class="form-control" />
-			<button type="button" class="btn btn-default btn-block btn-custom">Login</button>
-      <button type="button" onclick="location.href='register.php';">Register</button>
+			<form class="" action="getLogin.php" method="post">
+                <input type="text" id ="username" name="username" placeholder="Username" class="form-control" />
+    			<input type="text" id = "password" name="password" placeholder="Password" class="form-control" />
+    			<button type="submit" class="btn btn-default btn-block btn-custom">Login</button>
+			</form>
+      <button type="button" class="btn btn-default btn-block btn-custom" onclick="location.href='register.php';">Register</button>
 		</div><!-- /.controls -->
 	</div><!-- /#login-box -->
 </div><!-- /.container -->
