@@ -29,13 +29,13 @@
               			</a>
             		</li>
             		<li class="nav-item">
-              			<a class="nav-link" href="#"></a>
+              			<a class="nav-link" href="#">Test</a>
             		</li>
 					<li class="nav-item">
-              			<a class="nav-link" href="about/index.html">About</a>
+              			<a class="nav-link" href="#">Test2</a>
             		</li>
             		<li class="nav-item">
-              			<a class="nav-link" href="about/index.html">About</a>
+              			<a class="nav-link" href="about/index.htm">About</a>
             		</li>
             		<li class="nav-item">
               			<a class="nav-link" href="">Login</a>
