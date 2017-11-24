@@ -15,18 +15,17 @@
 
 <body>
 		<?php
-							$host = "35.163.12.144";
-							$username = "int203";
-							$password = "lovesql";
-							$database = "int203";
-							$dbname = "int203";
+			$host = "35.163.12.144";
+			$username = "int203";
+			$password = "lovesql";
+			$database = "int203";
+			$dbname = "int203";
 
-							// Create connection
-							$conn = new mysqli($host, $username, $password, $dbname);
-							if(!$conn){
-								echo "เชื่อมต่อไม่ได้";
-							}
-
+			// Create connection
+			$conn = new mysqli($host, $username, $password, $dbname);
+			if(!$conn){
+				echo "เชื่อมต่อไม่ได้";
+			}
 		?>
     <!-- Navigation -->
 
