@@ -51,9 +51,9 @@
         	<div class="col-lg-3">
 				<h1 class="my-4">SLOTYWORLD SHOP</h1>
           		<div class="list-group">
-            		<a href="#" class="list-group-item">Category 1</a>
-            		<a href="#" class="list-group-item">Category 2</a>
-            		<a href="#" class="list-group-item">Category 3</a>
+            		<a href="category1.php" class="list-group-item">Category 1</a>
+            		<a href="category2.php" class="list-group-item">Category 2</a>
+            		<a href="category3.php" class="list-group-item">Category 3</a>
           		</div>
         	</div>
         <!-- /.col-lg-3 -->
