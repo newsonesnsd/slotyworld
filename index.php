@@ -48,7 +48,7 @@
               			<a class="nav-link" href="#">Test2</a>
             		</li>
             		<li class="nav-item">
-              			<a class="nav-link" href="about/index.htm">About</a>
+              			<a class="nav-link" href="about/index.html">About</a>
             		</li>
             		<li class="nav-item">
               			<a class="nav-link" href="login.php">Login</a>
