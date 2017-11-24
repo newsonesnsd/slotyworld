@@ -61,7 +61,7 @@
         	<div class="col-lg-3">
 				<h1 class="my-4">SLOTYWORLD SHOP</h1>
           		<div class="list-group">
-            		<a href="#" class="list-group-item">
+            		<a href="category1.php" class="list-group-item">
 									<!-- $result = mysql_query("SELECT option_value FROM wp_10_options WHERE option_name='homepage' LIMIT 1");
 									$row = mysql_fetch_assoc($result);
 									echo $row['option_value']; -->
@@ -78,7 +78,7 @@
 
 									?>
             		</a>
-            		<a href="#" class="list-group-item">
+            		<a href="category2.php" class="list-group-item">
 									<?php
 									//statement
 									$sql = "select categoryname from Category where categoryname = 'Software'";
@@ -92,7 +92,7 @@
 
 									?>
             		</a>
-            		<a href="#" class="list-group-item">
+            		<a href="category3.php" class="list-group-item">
 									<?php
 									//statement
 									$sql = "select categoryname from Category where categoryname = 'Others'";
@@ -158,7 +158,7 @@
 										  }
 
 											?>
-										</a>
+					</a>
                   </h4>
                   <h5>
 										<?php
