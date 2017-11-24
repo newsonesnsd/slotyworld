@@ -146,18 +146,17 @@
                 <div class="card-body">
                   <h4 class="card-title">
                     <a href="item1.html">
-											<?php
-											//statement
-											$sql = "select productname from product where productid = 10001";
-											$result = $conn->query($sql);
-											if ($result->num_rows > 0) {
-										      // output data of each row
-										      while($row = $result->fetch_assoc()) {
-										          echo $row["productname"];
-										      }
-										  }
-
-											?>
+						<?php
+							//statement
+							$sql = "select productname from product where productid = 10001";
+							$result = $conn->query($sql);
+							if ($result->num_rows > 0) {
+								// output data of each row
+								while($row = $result->fetch_assoc()) {
+									echo $row["productname"];
+								}
+							}
+						?>
 										</a>
                   </h4>
                   <h5>
