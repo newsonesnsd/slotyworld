@@ -10,7 +10,7 @@
     <!-- Bootstrap core CSS -->
     <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
     <!-- Custom styles for this template -->
-	<link href="assets/css/shop-homepage.css" rel="stylesheet">
+	<link href="css/shop-homepage.css" rel="stylesheet">
 </head>
 
 <body>
@@ -148,7 +148,7 @@
                     <a href="item1.html">
 											<?php
 											//statement
-											$sql = "select productname from Product where productid = 20001";
+											$sql = "select productname from Product where productid = 30001";
 											$result = $conn->query($sql);
 											if ($result->num_rows > 0) {
 										      // output data of each row
@@ -163,7 +163,7 @@
                   <h5>
 										<?php
 										//statement
-										$sql = "select price from Product where productid = 20001";
+										$sql = "select price from Product where productid = 30001";
 										$result = $conn->query($sql);
 										if ($result->num_rows > 0) {
 												// output data of each row
@@ -178,7 +178,7 @@
                   <p class="card-text">
 										<?php
 										//statement
-										$sql = "select details from Product where productid = 20001";
+										$sql = "select details from Product where productid = 30001";
 										$result = $conn->query($sql);
 										if ($result->num_rows > 0) {
 												// output data of each row
@@ -210,7 +210,7 @@
                     <a href="#">
 											<?php
 											//statement
-											$sql = "select productname from Product where productid = 20002";
+											$sql = "select productname from Product where productid = 30002";
 											$result = $conn->query($sql);
 											if ($result->num_rows > 0) {
 										      // output data of each row
@@ -225,7 +225,7 @@
                   <h5>
 										<?php
 										//statement
-										$sql = "select price from Product where productid = 20002";
+										$sql = "select price from Product where productid = 30002";
 										$result = $conn->query($sql);
 										if ($result->num_rows > 0) {
 												// output data of each row
@@ -239,7 +239,7 @@
                   <p class="card-text">
 										<?php
 										//statement
-										$sql = "select details from Product where productid = 20002";
+										$sql = "select details from Product where productid = 30002";
 										$result = $conn->query($sql);
 										if ($result->num_rows > 0) {
 												// output data of each row
@@ -265,7 +265,7 @@
                     <a href="#">
 											<?php
 											//statement
-											$sql = "select productname from Product where productid = 20003";
+											$sql = "select productname from Product where productid = 30003";
 											$result = $conn->query($sql);
 											if ($result->num_rows > 0) {
 													// output data of each row
@@ -280,7 +280,7 @@
                   <h5>
 										<?php
 										//statement
-										$sql = "select price from Product where productid = 20003";
+										$sql = "select price from Product where productid = 30003";
 										$result = $conn->query($sql);
 										if ($result->num_rows > 0) {
 												// output data of each row
@@ -294,7 +294,7 @@
                   <p class="card-text">
 										<?php
 										//statement
-										$sql = "select details from Product where productid = 20003";
+										$sql = "select details from Product where productid = 30003";
 										$result = $conn->query($sql);
 										if ($result->num_rows > 0) {
 												// output data of each row
@@ -312,7 +312,7 @@
               </div>
             </div>
 
-            
+
                 <div class="card-footer">
                   <small class="text-muted">&#9733; &#9733; &#9733; &#9733; &#9734;</small>
                 </div>

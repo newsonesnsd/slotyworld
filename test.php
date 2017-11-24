@@ -1,19 +1,24 @@
 <?php
-    $servername = "35.163.12.144";
-    $username = "int203";
-    $password = "lovesql";
+          $host = "35.163.12.144";
+          $username = "int203";
+          $password = "lovesql";
+          $database = "int203";
+          $dbname = "int203";
 
-    // Create connection
-    $conn = new mysqli($servername, $username, $password);
+          // Create connection
+          $conn = new mysqli($host, $username, $password, $dbname);
+          if(!$conn){
+            echo "เชื่อมต่อไม่ได้";
+          }
 
-   // Check connection
-    if ($conn->connect_error) {
-        die("Connection failed: " . $conn->connect_error);
+//statement
+$sql = "select productname from Product where productid = 10001";
+$result = $conn->query($sql);
+if ($result->num_rows > 0) {
+    // output data of each row
+    while($row = $result->fetch_assoc()) {
+        echo $row["productname"];
     }
-    echo "Connected successfully<br>";
-    echo "Hello world";
-    $name = "Winner";
-    $lname = "Rojsithtiwat";
+}
 
-    echo $name;
 ?>

@@ -8,13 +8,13 @@
     <meta name="description" content="">
     <meta name="author" content="">
 
-    <title>Shop Item - Start Bootstrap Template</title>
+    <title>Sloty - Homepage</title>
 
     <!-- Bootstrap core CSS -->
     <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
 
     <!-- Custom styles for this template -->
-    <link href="assets/css/shop-item.css" rel="stylesheet">
+    <link href="css/shop-item.css" rel="stylesheet">
 
   </head>
 
@@ -36,7 +36,7 @@
     <!-- Navigation -->
     <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
       <div class="container">
-        <a class="navbar-brand" href="#">Start Bootstrap</a>
+        <a class="navbar-brand" href="#">Sloty</a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
           <span class="navbar-toggler-icon"></span>
         </button>
@@ -67,11 +67,50 @@
       <div class="row">
 
         <div class="col-lg-3">
-          <h1 class="my-4">Shop Name</h1>
+          <h1 class="my-4">SLOTYWORLD SHOP</h1>
           <div class="list-group">
-            <a href="#" class="list-group-item active">Category 1</a>
-            <a href="#" class="list-group-item">Category 2</a>
-            <a href="#" class="list-group-item">Category 3</a>
+            <a href="#" class="list-group-item active">
+              <?php
+              //statement
+              $sql = "select categoryname from Category where categoryname = 'Hardware'";
+              $result = $conn->query($sql);
+              if ($result->num_rows > 0) {
+                  // output data of each row
+                  while($row = $result->fetch_assoc()) {
+                      echo $row["categoryname"];
+                  }
+              }
+
+              ?>
+            </a>
+            <a href="#" class="list-group-item">
+              <?php
+              //statement
+              $sql = "select categoryname from Category where categoryname = 'Software'";
+              $result = $conn->query($sql);
+              if ($result->num_rows > 0) {
+                  // output data of each row
+                  while($row = $result->fetch_assoc()) {
+                      echo $row["categoryname"];
+                  }
+              }
+
+              ?>
+            </a>
+            <a href="#" class="list-group-item">
+              <?php
+              //statement
+              $sql = "select categoryname from Category where categoryname = 'Others'";
+              $result = $conn->query($sql);
+              if ($result->num_rows > 0) {
+                  // output data of each row
+                  while($row = $result->fetch_assoc()) {
+                      echo $row["categoryname"];
+                  }
+              }
+
+              ?>
+            </a>
           </div>
         </div>
         <!-- /.col-lg-3 -->
@@ -84,7 +123,7 @@
               <h3 class="card-title">
                 <?php
                 //statement
-                $sql = "select productname from Product where productid = 10003";
+                $sql = "select productname from Product where productid = 10002";
                 $result = $conn->query($sql);
                 if ($result->num_rows > 0) {
                     // output data of each row
@@ -98,7 +137,7 @@
               <h4>
                 <?php
                 //statement
-                $sql = "select price from Product where productid = 10003";
+                $sql = "select price from Product where productid = 10002";
                 $result = $conn->query($sql);
                 if ($result->num_rows > 0) {
                     // output data of each row
@@ -138,7 +177,7 @@
               <p>
                 <?php
                   //statement
-                  $sql = "select commentdetail from ProductComment where productId = 10003";
+                  $sql = "select commentdetail from ProductComment where productId = 10002";
                   $result = $conn->query($sql);
                   if ($result->num_rows > 0) {
                       // output data of each row
@@ -168,7 +207,7 @@
               <p>
                 <?php
                 //statement
-                $sql = "select commentdetail from ProductComment where productid = 10003";
+                $sql = "select commentdetail from ProductComment where productid = 10001";
                 $result = $conn->query($sql);
                 if ($result->num_rows > 0) {
                     // output data of each row
@@ -183,7 +222,7 @@
               <p>
                 <?php
                 //statement
-                $sql = "select commentdetail from ProductComment where productid = 10003";
+                $sql = "select commentdetail from ProductComment where productid = 10001";
                 $result = $conn->query($sql);
                 if ($result->num_rows > 0) {
                     // output data of each row

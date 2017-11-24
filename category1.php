@@ -67,7 +67,7 @@
 									echo $row['option_value']; -->
 									<?php
 									//statement
-									$sql = "select categoryname from category where categoryname = 'Hardware'";
+									$sql = "select categoryname from Category where categoryname = 'Hardware'";
 									$result = $conn->query($sql);
 									if ($result->num_rows > 0) {
 											// output data of each row
@@ -81,7 +81,7 @@
             		<a href="#" class="list-group-item">
 									<?php
 									//statement
-									$sql = "select categoryname from category where categoryname = 'Software'";
+									$sql = "select categoryname from Category where categoryname = 'Software'";
 									$result = $conn->query($sql);
 									if ($result->num_rows > 0) {
 											// output data of each row
@@ -95,7 +95,7 @@
             		<a href="#" class="list-group-item">
 									<?php
 									//statement
-									$sql = "select categoryname from category where categoryname = 'Others'";
+									$sql = "select categoryname from Category where categoryname = 'Others'";
 									$result = $conn->query($sql);
 									if ($result->num_rows > 0) {
 											// output data of each row
@@ -148,7 +148,7 @@
                     <a href="item1.html">
 											<?php
 											//statement
-											$sql = "select productname from product where productid = 10001";
+											$sql = "select productname from Product where productid = 10001";
 											$result = $conn->query($sql);
 											if ($result->num_rows > 0) {
 										      // output data of each row
@@ -163,7 +163,7 @@
                   <h5>
 										<?php
 										//statement
-										$sql = "select price from product where productid = 10001";
+										$sql = "select price from Product where productid = 10001";
 										$result = $conn->query($sql);
 										if ($result->num_rows > 0) {
 												// output data of each row
@@ -178,7 +178,7 @@
                   <p class="card-text">
 										<?php
 										//statement
-										$sql = "select details from product where productid = 10001";
+										$sql = "select details from Product where productid = 10001";
 										$result = $conn->query($sql);
 										if ($result->num_rows > 0) {
 												// output data of each row
@@ -210,7 +210,7 @@
                     <a href="#">
 											<?php
 											//statement
-											$sql = "select productname from product where productid = 10002";
+											$sql = "select productname from Product where productid = 10002";
 											$result = $conn->query($sql);
 											if ($result->num_rows > 0) {
 										      // output data of each row
@@ -225,7 +225,7 @@
                   <h5>
 										<?php
 										//statement
-										$sql = "select price from product where productid = 10002";
+										$sql = "select price from Product where productid = 10002";
 										$result = $conn->query($sql);
 										if ($result->num_rows > 0) {
 												// output data of each row
@@ -239,7 +239,7 @@
                   <p class="card-text">
 										<?php
 										//statement
-										$sql = "select details from product where productid = 10002";
+										$sql = "select details from Product where productid = 10002";
 										$result = $conn->query($sql);
 										if ($result->num_rows > 0) {
 												// output data of each row
@@ -265,7 +265,7 @@
                     <a href="#">
 											<?php
 											//statement
-											$sql = "select productname from product where productid = 10003";
+											$sql = "select productname from Product where productid = 10003";
 											$result = $conn->query($sql);
 											if ($result->num_rows > 0) {
 													// output data of each row
@@ -280,7 +280,7 @@
                   <h5>
 										<?php
 										//statement
-										$sql = "select price from product where productid = 10003";
+										$sql = "select price from Product where productid = 10003";
 										$result = $conn->query($sql);
 										if ($result->num_rows > 0) {
 												// output data of each row
@@ -294,7 +294,7 @@
                   <p class="card-text">
 										<?php
 										//statement
-										$sql = "select details from product where productid = 10003";
+										$sql = "select details from Product where productid = 10003";
 										$result = $conn->query($sql);
 										if ($result->num_rows > 0) {
 												// output data of each row
@@ -320,7 +320,7 @@
                     <a href="#">
 											<?php
 											//statement
-											$sql = "select productname from product where productid = 10004";
+											$sql = "select productname from Product where productid = 10004";
 											$result = $conn->query($sql);
 											if ($result->num_rows > 0) {
 													// output data of each row
@@ -335,7 +335,7 @@
                   <h5>
 										<?php
 										//statement
-										$sql = "select price from product where productid = 10004";
+										$sql = "select price from Product where productid = 10004";
 										$result = $conn->query($sql);
 										if ($result->num_rows > 0) {
 												// output data of each row
@@ -349,7 +349,7 @@
                   <p class="card-text">
 										<?php
 										//statement
-										$sql = "select details from product where productid = 10004";
+										$sql = "select details from Product where productid = 10004";
 										$result = $conn->query($sql);
 										if ($result->num_rows > 0) {
 												// output data of each row
@@ -375,7 +375,7 @@
                     <a href="#">
 											<?php
 											//statement
-											$sql = "select productname from product where productid = 10005";
+											$sql = "select productname from Product where productid = 10005";
 											$result = $conn->query($sql);
 											if ($result->num_rows > 0) {
 													// output data of each row
@@ -390,7 +390,7 @@
                   <h5>
 										<?php
 										//statement
-										$sql = "select price from product where productid = 10005";
+										$sql = "select price from Product where productid = 10005";
 										$result = $conn->query($sql);
 										if ($result->num_rows > 0) {
 												// output data of each row
@@ -404,7 +404,7 @@
                   <p class="card-text">
 										<?php
 										//statement
-										$sql = "select details from product where productid = 10005";
+										$sql = "select details from Product where productid = 10005";
 										$result = $conn->query($sql);
 										if ($result->num_rows > 0) {
 												// output data of each row
@@ -430,7 +430,7 @@
                     <a href="#">
 											<?php
 											//statement
-											$sql = "select productname from product where productid = 10006";
+											$sql = "select productname from Product where productid = 10006";
 											$result = $conn->query($sql);
 											if ($result->num_rows > 0) {
 													// output data of each row
@@ -445,7 +445,7 @@
                   <h5>
 										<?php
 										//statement
-										$sql = "select price from product where productid = 10006";
+										$sql = "select price from Product where productid = 10006";
 										$result = $conn->query($sql);
 										if ($result->num_rows > 0) {
 												// output data of each row
@@ -459,7 +459,7 @@
                   <p class="card-text">
 										<?php
 										//statement
-										$sql = "select details from product where productid = 10006";
+										$sql = "select details from Product where productid = 10006";
 										$result = $conn->query($sql);
 										if ($result->num_rows > 0) {
 												// output data of each row
