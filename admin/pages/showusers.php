@@ -382,7 +382,7 @@
         <div id="page-wrapper">
             <div class="row">
                 <div class="col-lg-12">
-                    <h1 class="page-header">Tables</h1>
+                    <h1 class="page-header">Users</h1>
                 </div>
                 <!-- /.col-lg-12 -->
             </div>
@@ -395,11 +395,12 @@
                 <!-- /.col-lg-12 -->
             </div>
             <!-- /.row -->
+            <!-- Show All Users -->
             <div class="row">
                 <div class="col-lg-12">
                     <div class="panel panel-default">
                         <div class="panel-heading">
-                            Customer Details
+                            Admin Detail
                         </div>
                         <!-- /.panel-heading -->
                         <div class="panel-body">
@@ -413,12 +414,14 @@
                                             <th>Last Name</th>
                                             <th>Username</th>
                                             <th>Gender</th>
+                                            <th>DOB</th>
                                             <th>Address</th>
+                                            <th>Postcode</th>
                                         </tr>
                                     </thead>
                                     <tbody>
                                         <?php
-                                            $sql = "select * from User U join Role R on U.roleid = R.roleid  where R.roleid = 'Customers'";
+                                            $sql = "select * from User U join Role R on U.roleid = R.roleid  where R.roleDescription = 'Customer'";
                                             $result = $conn->query($sql);
                                             if ($result->num_rows > 0) {
                                                 // output data of each row
@@ -429,7 +432,9 @@
                                                     echo "<td>" .$row["lname"]."</td>";
                                                     echo "<td>" .$row["email"]."</td>";
                                                     echo "<td>" .$row["gender"]."</td>";
-                                                    echo "<td>" .$row["address"]."</td>";
+                                                    echo "<td>" .$row["dob"]."</td>";
+                                                    echo "<td>" .$row["address"].", ".$row["city"]."</td>";
+                                                    echo "<td>" .$row["postcode"]."</td>";
                                                     echo "</tr>";
 
                                                 }
@@ -451,54 +456,52 @@
                 </div>
                 <!-- /.col-lg-6 -->
             </div>
-            <!-- /.row -->
+
+            <!-- Show Admin -->
             <div class="row">
-                <div class="col-lg-6">
-                    <!-- /.panel -->
-                </div>
-                <!-- /.col-lg-6 -->
-                <div class="col-lg-6">
-                </div>
-                <!-- /.col-lg-6 -->
-            </div>
-            <!-- /.row -->
-            <div class="row">
-                <div class="col-lg-6">
+                <div class="col-lg-12">
                     <div class="panel panel-default">
                         <div class="panel-heading">
-                            Hover Rows
+                            Customer Details
                         </div>
                         <!-- /.panel-heading -->
                         <div class="panel-body">
                             <div class="table-responsive">
-                                <table class="table table-hover">
+
+                                <table class="table table-striped table-bordered table-hover">
                                     <thead>
                                         <tr>
                                             <th>#</th>
                                             <th>First Name</th>
                                             <th>Last Name</th>
                                             <th>Username</th>
+                                            <th>Gender</th>
+                                            <th>DOB</th>
+                                            <th>Address</th>
+                                            <th>Postcode</th>
                                         </tr>
                                     </thead>
                                     <tbody>
-                                        <tr>
-                                            <td>1</td>
-                                            <td>Mark</td>
-                                            <td>Otto</td>
-                                            <td>@mdo</td>
-                                        </tr>
-                                        <tr>
-                                            <td>2</td>
-                                            <td>Jacob</td>
-                                            <td>Thornton</td>
-                                            <td>@fat</td>
-                                        </tr>
-                                        <tr>
-                                            <td>3</td>
-                                            <td>Larry</td>
-                                            <td>the Bird</td>
-                                            <td>@twitter</td>
-                                        </tr>
+                                        <?php
+                                            $sql = "select * from User U join Role R on U.roleid = R.roleid  where R.roleDescription = 'Admin'";
+                                            $result = $conn->query($sql);
+                                            if ($result->num_rows > 0) {
+                                                // output data of each row
+                                                while($row = $result->fetch_assoc()) {
+                                                    echo "<tr>";
+                                                    echo "<td>" .$row["userid"]."</td>";
+                                                    echo "<td>" .$row["fname"]."</td>";
+                                                    echo "<td>" .$row["lname"]."</td>";
+                                                    echo "<td>" .$row["email"]."</td>";
+                                                    echo "<td>" .$row["gender"]."</td>";
+                                                    echo "<td>" .$row["dob"]."</td>";
+                                                    echo "<td>" .$row["address"].", ".$row["city"]."</td>";
+                                                    echo "<td>" .$row["postcode"]."</td>";
+                                                    echo "</tr>";
+
+                                                }
+                                            }
+                                        ?>
                                     </tbody>
                                 </table>
                             </div>
@@ -510,54 +513,7 @@
                 </div>
                 <!-- /.col-lg-6 -->
                 <div class="col-lg-6">
-                    <div class="panel panel-default">
-                        <div class="panel-heading">
-                            Context Classes
-                        </div>
-                        <!-- /.panel-heading -->
-                        <div class="panel-body">
-                            <div class="table-responsive">
-                                <table class="table">
-                                    <thead>
-                                        <tr>
-                                            <th>#</th>
-                                            <th>First Name</th>
-                                            <th>Last Name</th>
-                                            <th>Username</th>
-                                        </tr>
-                                    </thead>
-                                    <tbody>
-                                        <tr class="success">
-                                            <td>1</td>
-                                            <td>Mark</td>
-                                            <td>Otto</td>
-                                            <td>@mdo</td>
-                                        </tr>
-                                        <tr class="info">
-                                            <td>2</td>
-                                            <td>Jacob</td>
-                                            <td>Thornton</td>
-                                            <td>@fat</td>
-                                        </tr>
-                                        <tr class="warning">
-                                            <td>3</td>
-                                            <td>Larry</td>
-                                            <td>the Bird</td>
-                                            <td>@twitter</td>
-                                        </tr>
-                                        <tr class="danger">
-                                            <td>4</td>
-                                            <td>John</td>
-                                            <td>Smith</td>
-                                            <td>@jsmith</td>
-                                        </tr>
-                                    </tbody>
-                                </table>
-                            </div>
-                            <!-- /.table-responsive -->
-                        </div>
-                        <!-- /.panel-body -->
-                    </div>
+
                     <!-- /.panel -->
                 </div>
                 <!-- /.col-lg-6 -->
@@ -595,6 +551,9 @@
     });
     </script>
 
+    <?php
+        $conn->close();
+    ?>
 </body>
 
 </html>
