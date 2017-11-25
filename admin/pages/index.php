@@ -87,6 +87,11 @@
                             <ul class="nav nav-second-level">
                                 <li>
                                     <a href="stock1.php">
+                                        Management
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="stock1.php">
                                         <?php
                 							//statement
                 							$sql = "select categoryname from Category where categoryname = 'Hardware'";
@@ -235,7 +240,19 @@
                                     <i class="fa fa-shopping-cart fa-5x"></i>
                                 </div>
                                 <div class="col-xs-9 text-right">
-                                    <div class="huge">124</div>
+                                    <div class="huge">
+                                        <?php
+                                            //statement
+                                            $sql = "select count(*) from Invoice";
+                                            $result = $conn->query($sql);
+                                            if ($result->num_rows > 0) {
+                                                // output data of each row
+                                                while($row = $result->fetch_assoc()) {
+                                                    echo $row["count(*)"];
+                                                }
+                                            }
+                                        ?>
+                                    </div>
                                     <div>Orders!</div>
                                 </div>
                             </div>
