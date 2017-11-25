@@ -283,10 +283,22 @@
                             <a href="index.php"><i class="fa fa-dashboard fa-fw"></i> Dashboard</a>
                         </li>
                         <li>
-                            <a href="#"><i class="fa fa-bar-chart-o fa-fw"></i> Charts<span class="fa arrow"></span></a>
+                            <a href="#"><i class="fa fa-bar-chart-o fa-fw"></i> Stock<span class="fa arrow"></span></a>
                             <ul class="nav nav-second-level">
                                 <li>
-                                    <a href="flot.html">Flot Charts</a>
+                                    <a href="flot.html">
+                                        <?php
+                							//statement
+                							$sql = "select categoryname from Category where categoryname = 'Hardware'";
+                							$result = $conn->query($sql);
+                							if ($result->num_rows > 0) {
+                								// output data of each row
+                								while($row = $result->fetch_assoc()) {
+                									echo $row["categoryname"];
+                								}
+                							}
+                						?>
+                                    </a>
                                 </li>
                                 <li>
                                     <a href="morris.html">Morris.js Charts</a>
