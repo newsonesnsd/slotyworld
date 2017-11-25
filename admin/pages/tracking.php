@@ -163,17 +163,7 @@
             <div class="row">
                 <div class="col-lg-12">
                     <h1 class="page-header">
-                        <?php
-                            //statement
-                            $sql = "select categoryname from Category where categoryname = 'Hardware'";
-                            $result = $conn->query($sql);
-                            if ($result->num_rows > 0) {
-                                // output data of each row
-                                while($row = $result->fetch_assoc()) {
-                                    echo "Category: ".$row["categoryname"];
-                                }
-                            }
-                        ?>
+                        Traking Status
                     </h1>
                 </div>
                 <!-- /.col-lg-12 -->
@@ -201,27 +191,24 @@
                                     <thead>
                                         <tr>
                                             <th>#</th>
-                                            <th>Name</th>
-                                            <th>Details</th>
-                                            <th>Prices</th>
-                                            <th>Quantity</th>
+                                            <th>Tracking Number</th>
+                                            <th>Status</th>
                                         </tr>
                                     </thead>
                                     <tbody>
                                         <?php
-                                            $sql = "select * from Product P join Category C
-                                                on P.categoryid = C.categoryid
-                                                where C.categoryname = 'Hardware'";
+                                            $sql = "SELECT i.invoiceid id, t.trackingnumber tracknum, st.description des
+                                                    from Invoice i join Tracking t on t.invoiceid = i.invoiceid
+		                                            join StatusTracking st on st.statustrackingid = t.statustrackingid
+                                                    order by id asc";
                                             $result = $conn->query($sql);
                                             if ($result->num_rows > 0) {
                                                 // output data of each row
                                                 while($row = $result->fetch_assoc()) {
                                                     echo "<tr>";
-                                                    echo "<td>" .$row["productid"]."</td>";
-                                                    echo "<td>" .$row["productname"]."</td>";
-                                                    echo "<td>" .$row["details"]."</td>";
-                                                    echo "<td>" .$row["price"]."</td>";
-                                                    echo "<td>" .$row["quantity"]."</td>";
+                                                    echo "<td>" .$row["id"]."</td>";
+                                                    echo "<td>" .$row["tracknum"]."</td>";
+                                                    echo "<td>" .$row["des"]."</td>";
                                                     echo "</tr>";
 
                                                 }
