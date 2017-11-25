@@ -177,7 +177,7 @@
               <p>
                 <?php
                   //statement
-                  $sql = "select commentdetail from ProductComment where productId = 10001";
+                  $sql = "select commentdetail from ProductComment where productId = 10001 and commentid = 1";
                   $result = $conn->query($sql);
                   if ($result->num_rows > 0) {
                       // output data of each row
@@ -192,12 +192,12 @@
               <small class="text-muted">Posted by
                 <?php
                 //statement
-                $sql = "select userId ";
+                $sql = "select u.fname, u.lname from ProductComment pc join User u on u.userid = pc.userid where pc.userid = 3";
                 $result = $conn->query($sql);
                 if ($result->num_rows > 0) {
                     // output data of each row
                     while($row = $result->fetch_assoc()) {
-                        echo $row["commentdetail"];
+                        echo $row["fname"].$row["lname"];
                     }
                 }
                 ?>
@@ -206,7 +206,7 @@
               <p>
                 <?php
                 //statement
-                $sql = "select commentdetail from ProductComment where productid = 10001";
+                $sql = "select commentdetail from ProductComment where productid = 10001 and commentid = 2";
                 $result = $conn->query($sql);
                 if ($result->num_rows > 0) {
                     // output data of each row
@@ -216,12 +216,24 @@
                 }
                 ?>
               </p>
-              <small class="text-muted">Posted by Anonymous on 3/1/17</small>
+              <small class="text-muted">
+                <?php
+                //statement
+                $sql = "select u.fname, u.lname from ProductComment pc join User u on u.userid = pc.userid where pc.userid = 8";
+                $result = $conn->query($sql);
+                if ($result->num_rows > 0) {
+                    // output data of each row
+                    while($row = $result->fetch_assoc()) {
+                        echo $row["fname"].$row["lname"];
+                    }
+                }
+                ?>
+              </small>
               <hr>
               <p>
                 <?php
                 //statement
-                $sql = "select commentdetail from ProductComment where productid = 10001";
+                $sql = "select commentdetail from ProductComment where productid = 10001 and commentid = 3";
                 $result = $conn->query($sql);
                 if ($result->num_rows > 0) {
                     // output data of each row
@@ -231,7 +243,19 @@
                 }
                 ?>
               </p>
-              <small class="text-muted">Posted by Anonymous on 3/1/17</small>
+              <small class="text-muted">
+                <?php
+                //statement
+                $sql = "select u.fname, u.lname from ProductComment pc join User u on u.userid = pc.userid where pc.userid = 10";
+                $result = $conn->query($sql);
+                if ($result->num_rows > 0) {
+                    // output data of each row
+                    while($row = $result->fetch_assoc()) {
+                        echo $row["fname"].$row["lname"];
+                    }
+                }
+                ?>
+              </small>
               <hr>
               <a href="#" class="btn btn-success">Leave a Review</a>
             </div>

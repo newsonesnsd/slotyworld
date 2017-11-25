@@ -14,7 +14,7 @@
     <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
 
     <!-- Custom styles for this template -->
-    <link href="css/shop-item.css" rel="stylesheet">
+    <link href="assets/css/shop-item.css" rel="stylesheet">
 
   </head>
 
@@ -118,7 +118,7 @@
         <div class="col-lg-9">
 
           <div class="card mt-4">
-            <img class="card-img-top img-fluid" src="http://placehold.it/900x400" alt="">
+            <img class="card-img-top img-fluid" src="http://35.163.12.144/slotyworld/assets/picture/others/sd-64gb.jpg" alt="">
             <div class="card-body">
               <h3 class="card-title">
                 <?php
