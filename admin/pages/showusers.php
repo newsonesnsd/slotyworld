@@ -9,7 +9,7 @@
     <meta name="description" content="">
     <meta name="author" content="">
 
-    <title>Admin - Show Customers</title>
+    <title>Admin - Show Users</title>
     <?php
         $host = "35.163.12.144";
         $username = "int203";
@@ -57,7 +57,7 @@
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                 </button>
-                <a class="navbar-brand" href="index.html">SB Admin v2.0</a>
+                <a class="navbar-brand" href="index.php">SB Admin v2.0</a>
             </div>
             <!-- /.navbar-header -->
 
@@ -400,7 +400,7 @@
                 <div class="col-lg-12">
                     <div class="panel panel-default">
                         <div class="panel-heading">
-                            Admin Detail
+                            Customers Detail
                         </div>
                         <!-- /.panel-heading -->
                         <div class="panel-body">
@@ -462,7 +462,7 @@
                 <div class="col-lg-12">
                     <div class="panel panel-default">
                         <div class="panel-heading">
-                            Customer Details
+                            Admin Details
                         </div>
                         <!-- /.panel-heading -->
                         <div class="panel-body">

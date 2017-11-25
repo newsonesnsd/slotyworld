@@ -2,14 +2,26 @@
 <html lang="en">
 
 <head>
+    <?php
+              $host = "35.163.12.144";
+              $username = "int203";
+              $password = "lovesql";
+              $database = "int203";
+              $dbname = "int203";
 
+              // Create connection
+              $conn = new mysqli($host, $username, $password, $dbname);
+              if(!$conn){
+                echo "เชื่อมต่อไม่ได้";
+              }
+    ?>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="description" content="">
     <meta name="author" content="">
 
-    <title>SB Admin 2 - Bootstrap Admin Theme</title>
+    <title>Sloty Admin</title>
 
     <!-- Bootstrap Core CSS -->
     <link href="../vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
@@ -48,7 +60,7 @@
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                 </button>
-                <a class="navbar-brand" href="index.html">Sloty -  Admin</a>
+                <a class="navbar-brand" href="index.php">Sloty -  Admin</a>
             </div>
             <!-- /.navbar-header -->
 
@@ -277,7 +289,7 @@
                             <!-- /input-group -->
                         </li>
                         <li>
-                            <a href="index.html"><i class="fa fa-dashboard fa-fw"></i> Dashboard</a>
+                            <a href="index.php"><i class="fa fa-dashboard fa-fw"></i> Dashboard</a>
                         </li>
                         <li>
                             <a href="#"><i class="fa fa-bar-chart-o fa-fw"></i> Charts<span class="fa arrow"></span></a>
@@ -389,12 +401,22 @@
                                 <div class="col-xs-9 text-right">
                                     <div class="huge">
                                         <!-- Statement  -->
+                                        <?php
+                                            $sql = "select COUNT(*) AS countUser from User U join Role R on U.roleid = R.roleid WHERE R.roleDescription = 'Customer' group by R.roleid";
+                                            $result = $conn->query($sql);
+                                            while ($item = $result -> fetch_assoc()) {
+                                                # code...
+                                                $item = $item['countUser'];
+                                                echo $item;
+                                                break;
+                                            }
+                                        ?>
                                     </div>
                                     <div>Users</div>
                                 </div>
                             </div>
                         </div>
-                        <a href="showcustomers.php">
+                        <a href="showusers.php">
                             <div class="panel-footer">
                                 <span class="pull-left">View Customers</span>
                                 <span class="pull-right"><i class="fa fa-arrow-circle-right"></i></span>
@@ -434,13 +456,13 @@
                                 </div>
                                 <div class="col-xs-9 text-right">
                                     <div class="huge">124</div>
-                                    <div>New Orders!</div>
+                                    <div>Orders!</div>
                                 </div>
                             </div>
                         </div>
                         <a href="#">
                             <div class="panel-footer">
-                                <span class="pull-left">View Details</span>
+                                <span class="pull-left">View Invoices</span>
                                 <span class="pull-right"><i class="fa fa-arrow-circle-right"></i></span>
                                 <div class="clearfix"></div>
                             </div>
@@ -933,7 +955,9 @@
 
     <!-- Custom Theme JavaScript -->
     <script src="../dist/js/sb-admin-2.js"></script>
-
+<?php
+    $conn->close();
+?>
 </body>
 
 </html>
