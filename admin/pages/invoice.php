@@ -63,6 +63,7 @@
             <!-- /.navbar-header -->
 
 
+
             <div class="navbar-default sidebar" role="navigation">
                 <div class="sidebar-nav navbar-collapse">
                     <ul class="nav" id="side-menu">
@@ -86,16 +87,16 @@
                                 <li>
                                     <a href="stock1.php">
                                         <?php
-                							//statement
-                							$sql = "select categoryname from Category where categoryname = 'Hardware'";
-                							$result = $conn->query($sql);
-                							if ($result->num_rows > 0) {
-                								// output data of each row
-                								while($row = $result->fetch_assoc()) {
-                									echo $row["categoryname"];
-                								}
-                							}
-                						?>
+                                            //statement
+                                            $sql = "select categoryname from Category where categoryname = 'Hardware'";
+                                            $result = $conn->query($sql);
+                                            if ($result->num_rows > 0) {
+                                                // output data of each row
+                                                while($row = $result->fetch_assoc()) {
+                                                    echo $row["categoryname"];
+                                                }
+                                            }
+                                        ?>
                                     </a>
                                 </li>
                                 <li>
@@ -152,15 +153,15 @@
                         <li>
                             <a href="qurey5.php"><i class="fa fa-edit fa-fw"></i> Qurey 5</a>
                         </li>
-
                     </ul>
                 </div>
                 <!-- /.sidebar-collapse -->
             </div>
+            <!-- /.navbar-static-side -->
         </nav>
 
         <div id="page-wrapper">
-            <!-- Row Header -->
+            <!-- Invoice header -->
             <div class="row">
                 <div class="col-lg-12">
                     <h1 class="page-header">
@@ -169,18 +170,37 @@
                 </div>
                 <!-- /.col-lg-12 -->
             </div>
-            <!-- End Row Header -->
+            <!-- End Invoice Header -->
+            <!-- /.row -->
+            <div class="row">
+                <div class="col-lg-12">
+
+                    <!-- /.panel -->
+                </div>
+                <!-- /.col-lg-12 -->
+            </div>
             <!-- Show All Users -->
             <div class="row">
                 <div class="col-lg-12">
+                    <?php
+                        $totalRow = 0;
+                        $sql = "select invoiceid from Invoice ORDER by invoiceid desc limit 1";
+                        $result = $conn->query($sql);
+                        while ($row = $result -> fetch_assoc()) {
+                            # code...
+                            $totalRow = $row['invoiceid'];
+                            break;
+                        }
+                    ?>
+
+                <?php for ($i=1; $i <= $totalRow ; $i++): ?>
                     <div class="panel panel-default">
                         <div class="panel-heading">
-                            All Invoice
+                            Invoice <?php echo $i ?>
                         </div>
                         <!-- /.panel-heading -->
                         <div class="panel-body">
                             <div class="table-responsive">
-
                                 <table class="table table-striped table-bordered table-hover">
                                     <thead>
                                         <tr>
@@ -193,27 +213,62 @@
                                         </tr>
                                     </thead>
                                     <tbody>
+
                                         <?php
-                                            $sql = "select i.invoiceid AS invoice, p.productname AS PDN, p.price PDP, cd.quantity QUAN,
-                                                    cd.totalprice PTTP,  i.totalprice ITTP  from User u join Invoice i on i.userid = u.userid
-                            						join Cart c on i.cartid = c.cartid
-                            						join CartDetail cd on cd.cartid = c.cartid
-                                                    join Product p on p.productid = cd.productid";
-                                            $result = $conn->query($sql);
+                                            //echo "$i";
+                                            $sql = "SELECT Invoice.invoiceid invid, Product.productname pdn,
+                                                        Product.price pdp, CartDetail.quantity qty,
+                                                        CartDetail.totalprice cttp,
+                                                        Invoice.totalprice ittp
+                                                    from User
+                                                    join Invoice on Invoice.userid = User.userid
+                                                    JOIN Cart on Invoice.cartid = Cart.cartid
+                                                    JOIN CartDetail on CartDetail.cartid = Cart.cartid
+                                                    JOIN Product on Product.productid = CartDetail.productid
+                                                    WHERE Invoice.invoiceid = ?";
+
+                                            if($query = $conn->prepare($sql)) { // assuming $mysqli is the connection
+                                            $query->bind_param('i', $i);
+                                            $query->execute();
+                                            // any additional code you need would go here.
+                                                $result = $query->get_result();
                                             if ($result->num_rows > 0) {
                                                 // output data of each row
                                                 while($row = $result->fetch_assoc()) {
                                                     echo "<tr>";
-                                                    echo "<td>" .$row["invoice"]."</td>";
-                                                    echo "<td>" .$row["PDN"]."</td>";
-                                                    echo "<td>" .$row["PDP"]."</td>";
-                                                    echo "<td>" .$row["QUAN"]."</td>";
-                                                    echo "<td>" .$row["PTTP"]."</td>";
-                                                    echo "<td>" .$row["ITTP"]."</td>";
+                                                    echo "<td>" .$row["invid"]."</td>";
+                                                    echo "<td>" .$row["pdn"]."</td>";
+                                                    echo "<td>" .$row["pdp"]."</td>";
+                                                    echo "<td>" .$row["qty"]."</td>";
+                                                    echo "<td>" .$row["cttp"]."</td>";
+                                                    echo "<td>" .$row["ittp"]."</td>";
                                                     echo "</tr>";
 
                                                 }
                                             }
+                                        } else {
+                                            $error = $conn->errno . ' ' . $conn->error;
+                                            echo $error; // 1054 Unknown column 'foo' in 'field list'
+                                        }
+                                            // $stmt->bind_param('s', $i);
+                                            // $stmt->execute();
+                                            // $result = $conn->query($sql);
+
+                                            // $stmt = $conn->prepare("SELECT i.invoiceid AS invoice, p.productname AS PDN, p.price PDP,
+                                            //         cd.quantity QUAN, cd.totalprice PTTP,  i.totalprice ITTP
+                                            //         from User u join Invoice i on i.userid = u.userid
+                                            // 		join Cart c on i.cartid = c.cartid
+                                            // 		join CartDetail cd on cd.cartid = c.cartid
+                                            //         join Product p on p.productid = cd.productid
+                                            //         where invoice = ?");
+                                            // $sql =  "SELECT `i`.`invoiceid` AS `inv`, `p`.`productname` AS `PDN`, `p`.`price` AS `PDP`,
+                                            //         `cd`.`quantity` AS `QUAN`, `cd`.`totalprice` AS `PTTP`,  `i`.`totalprice` AS `ITTP`
+                                            //         from `User` `u` join `Invoice` `i` on `i`.`userid` = `u`.`userid`
+                                            //         join `Cart` `c` on `i`.`cartid` = `c`.`cartid`
+                                            //         join `CartDetail` `cd` on `cd`.`cartid` = `c`.`cartid`
+                                            //         join `Product` `p` on `p`.`productid` = `cd`.`productid`
+                                            //         where `inv` = 1";
+
                                         ?>
                                     </tbody>
                                 </table>
@@ -222,8 +277,9 @@
                         </div>
                         <!-- /.panel-body -->
                     </div>
-                    <!-- /.panel -->
+                <?php endfor; ?>
                 </div>
+            </div>
                 <!-- /.col-lg-6 -->
                 <!-- /.col-lg-6 -->
             </div>

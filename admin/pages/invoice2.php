@@ -62,215 +62,7 @@
             </div>
             <!-- /.navbar-header -->
 
-            <ul class="nav navbar-top-links navbar-right">
-                <li class="dropdown">
-                    <a class="dropdown-toggle" data-toggle="dropdown" href="#">
-                        <i class="fa fa-envelope fa-fw"></i> <i class="fa fa-caret-down"></i>
-                    </a>
-                    <ul class="dropdown-menu dropdown-messages">
-                        <li>
-                            <a href="#">
-                                <div>
-                                    <strong>John Smith</strong>
-                                    <span class="pull-right text-muted">
-                                        <em>Yesterday</em>
-                                    </span>
-                                </div>
-                                <div>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque eleifend...</div>
-                            </a>
-                        </li>
-                        <li class="divider"></li>
-                        <li>
-                            <a href="#">
-                                <div>
-                                    <strong>John Smith</strong>
-                                    <span class="pull-right text-muted">
-                                        <em>Yesterday</em>
-                                    </span>
-                                </div>
-                                <div>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque eleifend...</div>
-                            </a>
-                        </li>
-                        <li class="divider"></li>
-                        <li>
-                            <a href="#">
-                                <div>
-                                    <strong>John Smith</strong>
-                                    <span class="pull-right text-muted">
-                                        <em>Yesterday</em>
-                                    </span>
-                                </div>
-                                <div>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque eleifend...</div>
-                            </a>
-                        </li>
-                        <li class="divider"></li>
-                        <li>
-                            <a class="text-center" href="#">
-                                <strong>Read All Messages</strong>
-                                <i class="fa fa-angle-right"></i>
-                            </a>
-                        </li>
-                    </ul>
-                    <!-- /.dropdown-messages -->
-                </li>
-                <!-- /.dropdown -->
-                <li class="dropdown">
-                    <a class="dropdown-toggle" data-toggle="dropdown" href="#">
-                        <i class="fa fa-tasks fa-fw"></i> <i class="fa fa-caret-down"></i>
-                    </a>
-                    <ul class="dropdown-menu dropdown-tasks">
-                        <li>
-                            <a href="#">
-                                <div>
-                                    <p>
-                                        <strong>Task 1</strong>
-                                        <span class="pull-right text-muted">40% Complete</span>
-                                    </p>
-                                    <div class="progress progress-striped active">
-                                        <div class="progress-bar progress-bar-success" role="progressbar" aria-valuenow="40" aria-valuemin="0" aria-valuemax="100" style="width: 40%">
-                                            <span class="sr-only">40% Complete (success)</span>
-                                        </div>
-                                    </div>
-                                </div>
-                            </a>
-                        </li>
-                        <li class="divider"></li>
-                        <li>
-                            <a href="#">
-                                <div>
-                                    <p>
-                                        <strong>Task 2</strong>
-                                        <span class="pull-right text-muted">20% Complete</span>
-                                    </p>
-                                    <div class="progress progress-striped active">
-                                        <div class="progress-bar progress-bar-info" role="progressbar" aria-valuenow="20" aria-valuemin="0" aria-valuemax="100" style="width: 20%">
-                                            <span class="sr-only">20% Complete</span>
-                                        </div>
-                                    </div>
-                                </div>
-                            </a>
-                        </li>
-                        <li class="divider"></li>
-                        <li>
-                            <a href="#">
-                                <div>
-                                    <p>
-                                        <strong>Task 3</strong>
-                                        <span class="pull-right text-muted">60% Complete</span>
-                                    </p>
-                                    <div class="progress progress-striped active">
-                                        <div class="progress-bar progress-bar-warning" role="progressbar" aria-valuenow="60" aria-valuemin="0" aria-valuemax="100" style="width: 60%">
-                                            <span class="sr-only">60% Complete (warning)</span>
-                                        </div>
-                                    </div>
-                                </div>
-                            </a>
-                        </li>
-                        <li class="divider"></li>
-                        <li>
-                            <a href="#">
-                                <div>
-                                    <p>
-                                        <strong>Task 4</strong>
-                                        <span class="pull-right text-muted">80% Complete</span>
-                                    </p>
-                                    <div class="progress progress-striped active">
-                                        <div class="progress-bar progress-bar-danger" role="progressbar" aria-valuenow="80" aria-valuemin="0" aria-valuemax="100" style="width: 80%">
-                                            <span class="sr-only">80% Complete (danger)</span>
-                                        </div>
-                                    </div>
-                                </div>
-                            </a>
-                        </li>
-                        <li class="divider"></li>
-                        <li>
-                            <a class="text-center" href="#">
-                                <strong>See All Tasks</strong>
-                                <i class="fa fa-angle-right"></i>
-                            </a>
-                        </li>
-                    </ul>
-                    <!-- /.dropdown-tasks -->
-                </li>
-                <!-- /.dropdown -->
-                <li class="dropdown">
-                    <a class="dropdown-toggle" data-toggle="dropdown" href="#">
-                        <i class="fa fa-bell fa-fw"></i> <i class="fa fa-caret-down"></i>
-                    </a>
-                    <ul class="dropdown-menu dropdown-alerts">
-                        <li>
-                            <a href="#">
-                                <div>
-                                    <i class="fa fa-comment fa-fw"></i> New Comment
-                                    <span class="pull-right text-muted small">4 minutes ago</span>
-                                </div>
-                            </a>
-                        </li>
-                        <li class="divider"></li>
-                        <li>
-                            <a href="#">
-                                <div>
-                                    <i class="fa fa-twitter fa-fw"></i> 3 New Followers
-                                    <span class="pull-right text-muted small">12 minutes ago</span>
-                                </div>
-                            </a>
-                        </li>
-                        <li class="divider"></li>
-                        <li>
-                            <a href="#">
-                                <div>
-                                    <i class="fa fa-envelope fa-fw"></i> Message Sent
-                                    <span class="pull-right text-muted small">4 minutes ago</span>
-                                </div>
-                            </a>
-                        </li>
-                        <li class="divider"></li>
-                        <li>
-                            <a href="#">
-                                <div>
-                                    <i class="fa fa-tasks fa-fw"></i> New Task
-                                    <span class="pull-right text-muted small">4 minutes ago</span>
-                                </div>
-                            </a>
-                        </li>
-                        <li class="divider"></li>
-                        <li>
-                            <a href="#">
-                                <div>
-                                    <i class="fa fa-upload fa-fw"></i> Server Rebooted
-                                    <span class="pull-right text-muted small">4 minutes ago</span>
-                                </div>
-                            </a>
-                        </li>
-                        <li class="divider"></li>
-                        <li>
-                            <a class="text-center" href="#">
-                                <strong>See All Alerts</strong>
-                                <i class="fa fa-angle-right"></i>
-                            </a>
-                        </li>
-                    </ul>
-                    <!-- /.dropdown-alerts -->
-                </li>
-                <!-- /.dropdown -->
-                <li class="dropdown">
-                    <a class="dropdown-toggle" data-toggle="dropdown" href="#">
-                        <i class="fa fa-user fa-fw"></i> <i class="fa fa-caret-down"></i>
-                    </a>
-                    <ul class="dropdown-menu dropdown-user">
-                        <li><a href="#"><i class="fa fa-user fa-fw"></i> User Profile</a>
-                        </li>
-                        <li><a href="#"><i class="fa fa-gear fa-fw"></i> Settings</a>
-                        </li>
-                        <li class="divider"></li>
-                        <li><a href="login.html"><i class="fa fa-sign-out fa-fw"></i> Logout</a>
-                        </li>
-                    </ul>
-                    <!-- /.dropdown-user -->
-                </li>
-                <!-- /.dropdown -->
-            </ul>
-            <!-- /.navbar-top-links -->
+
 
             <div class="navbar-default sidebar" role="navigation">
                 <div class="sidebar-nav navbar-collapse">
@@ -290,7 +82,7 @@
                             <a href="index.php"><i class="fa fa-dashboard fa-fw"></i> Dashboard</a>
                         </li>
                         <li>
-                            <a href="#"><i class="fa fa-pie-chart fa-fw"></i> Stocks<span class="fa arrow"></span></a>
+                            <a href="#"><i class="fa fa-pie-chart fa-fw"></i> Stock<span class="fa arrow"></span></a>
                             <ul class="nav nav-second-level">
                                 <li>
                                     <a href="stock1.php">
@@ -344,7 +136,22 @@
                             <a href="invoice.php"><i class="fa fa-shopping-cart fa-fw"></i> Invoice</a>
                         </li>
                         <li>
-                            <a href="forms.php"><i class="fa fa-edit fa-fw"></i> Forms</a>
+                            <a href="tracking.php"><i class="fa fa-truck fa-fw"></i>Tracking</a>
+                        </li>
+                        <li>
+                            <a href="qurey1.php"><i class="fa fa-edit fa-fw"></i> Qurey 1</a>
+                        </li>
+                        <li>
+                            <a href="qurey2.php"><i class="fa fa-edit fa-fw"></i> Qurey 2</a>
+                        </li>
+                        <li>
+                            <a href="qurey3.php"><i class="fa fa-edit fa-fw"></i> Qurey 3</a>
+                        </li>
+                        <li>
+                            <a href="qurey4.php"><i class="fa fa-edit fa-fw"></i> Qurey 4</a>
+                        </li>
+                        <li>
+                            <a href="qurey5.php"><i class="fa fa-edit fa-fw"></i> Qurey 5</a>
                         </li>
                     </ul>
                 </div>
@@ -384,8 +191,6 @@
                             $totalRow = $row['invoiceid'];
                             break;
                         }
-                        ;
-                        // $conn -> mysql_free_result($result);
                     ?>
 
                 <?php for ($i=1; $i <= $totalRow ; $i++): ?>
@@ -411,46 +216,32 @@
 
                                         <?php
                                             //echo "$i";
-                                            // $sql = "SELECT i.invoiceid AS invoice, p.productname AS PDN, p.price PDP,
-                                            //         cd.quantity QUAN, cd.totalprice PTTP,  i.totalprice ITTP
-                                            //         from User u join Invoice i on i.userid = u.userid
-                            				// 		join Cart c on i.cartid = c.cartid
-                            				// 		join CartDetail cd on cd.cartid = c.cartid
-                                            //         join Product p on p.productid = cd.productid
-                                            //         ";
-                                            // $result = $conn->query($sql);
+                                            $sql = "SELECT Invoice.invoiceid invid, Product.productname pdn,
+                                                        Product.price pdp, CartDetail.quantity qty,
+                                                        CartDetail.totalprice cttp,
+                                                        Invoice.totalprice ittp
+                                                    from User
+                                                    join Invoice on Invoice.userid = User.userid
+                                                    JOIN Cart on Invoice.cartid = Cart.cartid
+                                                    JOIN CartDetail on CartDetail.cartid = Cart.cartid
+                                                    JOIN Product on Product.productid = CartDetail.productid
+                                                    WHERE Invoice.invoiceid = ?";
 
-                                            // $stmt = $conn->prepare("SELECT i.invoiceid AS invoice, p.productname AS PDN, p.price PDP,
-                                            //         cd.quantity QUAN, cd.totalprice PTTP,  i.totalprice ITTP
-                                            //         from User u join Invoice i on i.userid = u.userid
-                            				// 		join Cart c on i.cartid = c.cartid
-                            				// 		join CartDetail cd on cd.cartid = c.cartid
-                                            //         join Product p on p.productid = cd.productid
-                                            //         where invoice = ?");
-                                            $sql =  "SELECT `i`.`invoiceid` AS `inv`, `p`.`productname` AS `PDN`, `p`.`price` AS `PDP`,
-                                                    `cd`.`quantity` AS `QUAN`, `cd`.`totalprice` AS `PTTP`,  `i`.`totalprice` AS `ITTP`
-                                                    from `User` `u` join `Invoice` `i` on `i`.`userid` = `u`.`userid`
-                                                    join `Cart` `c` on `i`.`cartid` = `c`.`cartid`
-                                                    join `CartDetail` `cd` on `cd`.`cartid` = `c`.`cartid`
-                                                    join `Product` `p` on `p`.`productid` = `cd`.`productid`
-                                                    where `inv` = 1";
-                                                    var_dump($conn->prepare($sql));
-                                            if($qurey = $conn-> prepare($sql)) { // assuming $mysqli is the connection
-                                            echo('damn php is suck');
+                                            if($query = $conn->prepare($sql)) { // assuming $mysqli is the connection
                                             $query->bind_param('i', $i);
                                             $query->execute();
                                             // any additional code you need would go here.
-                                            $result = $sql->get_result();
+                                                $result = $query->get_result();
                                             if ($result->num_rows > 0) {
                                                 // output data of each row
                                                 while($row = $result->fetch_assoc()) {
                                                     echo "<tr>";
-                                                    echo "<td>" .$row["inv"]."</td>";
-                                                    echo "<td>" .$row["PDN"]."</td>";
-                                                    echo "<td>" .$row["PDP"]."</td>";
-                                                    echo "<td>" .$row["QUAN"]."</td>";
-                                                    echo "<td>" .$row["PTTP"]."</td>";
-                                                    echo "<td>" .$row["ITTP"]."</td>";
+                                                    echo "<td>" .$row["invid"]."</td>";
+                                                    echo "<td>" .$row["pdn"]."</td>";
+                                                    echo "<td>" .$row["pdp"]."</td>";
+                                                    echo "<td>" .$row["qty"]."</td>";
+                                                    echo "<td>" .$row["cttp"]."</td>";
+                                                    echo "<td>" .$row["ittp"]."</td>";
                                                     echo "</tr>";
 
                                                 }
@@ -461,7 +252,22 @@
                                         }
                                             // $stmt->bind_param('s', $i);
                                             // $stmt->execute();
+                                            // $result = $conn->query($sql);
 
+                                            // $stmt = $conn->prepare("SELECT i.invoiceid AS invoice, p.productname AS PDN, p.price PDP,
+                                            //         cd.quantity QUAN, cd.totalprice PTTP,  i.totalprice ITTP
+                                            //         from User u join Invoice i on i.userid = u.userid
+                                            // 		join Cart c on i.cartid = c.cartid
+                                            // 		join CartDetail cd on cd.cartid = c.cartid
+                                            //         join Product p on p.productid = cd.productid
+                                            //         where invoice = ?");
+                                            // $sql =  "SELECT `i`.`invoiceid` AS `inv`, `p`.`productname` AS `PDN`, `p`.`price` AS `PDP`,
+                                            //         `cd`.`quantity` AS `QUAN`, `cd`.`totalprice` AS `PTTP`,  `i`.`totalprice` AS `ITTP`
+                                            //         from `User` `u` join `Invoice` `i` on `i`.`userid` = `u`.`userid`
+                                            //         join `Cart` `c` on `i`.`cartid` = `c`.`cartid`
+                                            //         join `CartDetail` `cd` on `cd`.`cartid` = `c`.`cartid`
+                                            //         join `Product` `p` on `p`.`productid` = `cd`.`productid`
+                                            //         where `inv` = 1";
 
                                         ?>
                                     </tbody>
