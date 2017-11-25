@@ -286,25 +286,64 @@
                             <!-- /input-group -->
                         </li>
                         <li>
-                            <a href="index.html"><i class="fa fa-dashboard fa-fw"></i> Dashboard</a>
+                            <a href="index.php"><i class="fa fa-dashboard fa-fw"></i> Dashboard</a>
                         </li>
                         <li>
                             <a href="#"><i class="fa fa-bar-chart-o fa-fw"></i> Charts<span class="fa arrow"></span></a>
                             <ul class="nav nav-second-level">
                                 <li>
-                                    <a href="flot.html">Flot Charts</a>
+                                    <a href="stock1.php">
+                                        <?php
+                                            //statement
+                                            $sql = "select categoryname from Category where categoryname = 'Hardware'";
+                                            $result = $conn->query($sql);
+                                            if ($result->num_rows > 0) {
+                                                // output data of each row
+                                                while($row = $result->fetch_assoc()) {
+                                                    echo $row["categoryname"];
+                                                }
+                                            }
+                                        ?>
+                                    </a>
                                 </li>
                                 <li>
-                                    <a href="morris.html">Morris.js Charts</a>
+                                    <a href="stock2.php">
+                                        <?php
+                							//statement
+                							$sql = "select categoryname from Category where categoryname = 'Software'";
+                							$result = $conn->query($sql);
+                							if ($result->num_rows > 0) {
+                								// output data of each row
+                								while($row = $result->fetch_assoc()) {
+                									echo $row["categoryname"];
+                								}
+                							}
+                						?>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="stock3.php">
+                                        <?php
+                							//statement
+                							$sql = "select categoryname from Category where categoryname = 'Others'";
+                							$result = $conn->query($sql);
+                							if ($result->num_rows > 0) {
+                								// output data of each row
+                								while($row = $result->fetch_assoc()) {
+                									echo $row["categoryname"];
+                								}
+                							}
+                						?>
+                                    </a>
                                 </li>
                             </ul>
                             <!-- /.nav-second-level -->
                         </li>
                         <li>
-                            <a href="tables.html"><i class="fa fa-table fa-fw"></i> Tables</a>
+                            <a href="tables.php"><i class="fa fa-table fa-fw"></i> Tables</a>
                         </li>
                         <li>
-                            <a href="forms.html"><i class="fa fa-edit fa-fw"></i> Forms</a>
+                            <a href="forms.php"><i class="fa fa-edit fa-fw"></i> Forms</a>
                         </li>
                         <li>
                             <a href="#"><i class="fa fa-wrench fa-fw"></i> UI Elements<span class="fa arrow"></span></a>
@@ -394,7 +433,6 @@
                 </div>
                 <!-- /.col-lg-12 -->
             </div>
-            <!-- /.row -->
             <!-- Show All Users -->
             <div class="row">
                 <div class="col-lg-12">
@@ -450,10 +488,6 @@
                     <!-- /.panel -->
                 </div>
                 <!-- /.col-lg-6 -->
-                <div class="col-lg-6">
-
-                    <!-- /.panel -->
-                </div>
                 <!-- /.col-lg-6 -->
             </div>
 
