@@ -143,7 +143,7 @@
 
             <div class="col-lg-4 col-md-6 mb-4">
               <div class="card h-100">
-                <a href="#"><img class="card-img-top" src="http://placehold.it/700x400" alt=""></a>
+                <a href="#"><img class="card-img-top" src="http://35.163.12.144/slotyworld/assets/picture/software/kaspersky-small office.jpg" alt=""></a>
                 <div class="card-body">
                   <h4 class="card-title">
                     <a href="item1.html">
@@ -205,7 +205,7 @@
 
             <div class="col-lg-4 col-md-6 mb-4">
               <div class="card h-100">
-                <a href="#"><img class="card-img-top" src="http://placehold.it/700x400" alt=""></a>
+                <a href="#"><img class="card-img-top" src="http://35.163.12.144/slotyworld/assets/picture/software/bitdefender-plus- 2017.jpg" alt=""></a>
                 <div class="card-body">
                   <h4 class="card-title">
                     <a href="#">
@@ -260,7 +260,7 @@
 
             <div class="col-lg-4 col-md-6 mb-4">
               <div class="card h-100">
-                <a href="#"><img class="card-img-top" src="http://placehold.it/700x400" alt=""></a>
+                <a href="#"><img class="card-img-top" src="http://35.163.12.144/slotyworld/assets/picture/software/eset-nod32-antivirus.jpg" alt=""></a>
                 <div class="card-body">
                   <h4 class="card-title">
                     <a href="#">

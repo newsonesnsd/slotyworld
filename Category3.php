@@ -10,7 +10,7 @@
     <!-- Bootstrap core CSS -->
     <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
     <!-- Custom styles for this template -->
-	<link href="css/shop-homepage.css" rel="stylesheet">
+	<link href="assets/css/shop-homepage.css" rel="stylesheet">
 </head>
 
 <body>
@@ -143,7 +143,7 @@
 
             <div class="col-lg-4 col-md-6 mb-4">
               <div class="card h-100">
-                <a href="#"><img class="card-img-top" src="http://placehold.it/700x400" alt=""></a>
+                <a href="#"><img class="card-img-top" src="http://35.163.12.144/slotyworld/assets/picture/others/sd-64gb.jpg" alt=""></a>
                 <div class="card-body">
                   <h4 class="card-title">
                     <a href="item1.html">
@@ -205,7 +205,7 @@
 
             <div class="col-lg-4 col-md-6 mb-4">
               <div class="card h-100">
-                <a href="#"><img class="card-img-top" src="http://placehold.it/700x400" alt=""></a>
+                <a href="#"><img class="card-img-top" src="http://35.163.12.144/slotyworld/assets/picture/others/drone-dji.jpg" alt=""></a>
                 <div class="card-body">
                   <h4 class="card-title">
                     <a href="#">
@@ -260,7 +260,7 @@
 
             <div class="col-lg-4 col-md-6 mb-4">
               <div class="card h-100">
-                <a href="#"><img class="card-img-top" src="http://placehold.it/700x400" alt=""></a>
+                <a href="#"><img class="card-img-top" src="http://35.163.12.144/slotyworld/assets/picture/others/cctv-watashi.jpg" alt=""></a>
                 <div class="card-body">
                   <h4 class="card-title">
                     <a href="#">

@@ -10,7 +10,7 @@
     <!-- Bootstrap core CSS -->
     <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
     <!-- Custom styles for this template -->
-	<link href="css/shop-homepage.css" rel="stylesheet">
+	<link href="assets/css/shop-homepage.css" rel="stylesheet">
 </head>
 
 <body>
@@ -62,7 +62,7 @@
         	<div class="col-lg-3">
 				<h1 class="my-4">SLOTYWORLD SHOP</h1>
           		<div class="list-group">
-            		<a href="category1.php" class="list-group-item">
+            		<a href="#" class="list-group-item">
 									<!-- $result = mysql_query("SELECT option_value FROM wp_10_options WHERE option_name='homepage' LIMIT 1");
 									$row = mysql_fetch_assoc($result);
 									echo $row['option_value']; -->
@@ -79,7 +79,7 @@
 
 									?>
             		</a>
-            		<a href="category2.php" class="list-group-item">
+            		<a href="#" class="list-group-item">
 									<?php
 									//statement
 									$sql = "select categoryname from Category where categoryname = 'Software'";
@@ -93,7 +93,7 @@
 
 									?>
             		</a>
-            		<a href="category3.php" class="list-group-item">
+            		<a href="#" class="list-group-item">
 									<?php
 									//statement
 									$sql = "select categoryname from Category where categoryname = 'Others'";
@@ -120,13 +120,13 @@
             </ol>
             <div class="carousel-inner" role="listbox">
               <div class="carousel-item active">
-                <img class="d-block img-fluid" src="D:\xampp\htdocs\slotyworld\picture\;an.jpg" alt="First slide">
+                <img class="d-block img-fluid" src="http://35.163.12.144/slotyworld/assets/images/hardware/fx-6300.jpg" alt="First slide">
               </div>
               <div class="carousel-item">
-                <img class="d-block img-fluid" src="http://placehold.it/900x350" alt="Second slide">
+                <img class="d-block img-fluid" src="http://35.163.12.144/slotyworld/assets/picture/hardware/ssd-apacer.jpg" alt="Second slide">
               </div>
               <div class="carousel-item">
-                <img class="d-block img-fluid" src="http://placehold.it/900x350" alt="Third slide">
+                <img class="d-block img-fluid" src="http://35.163.12.144/slotyworld/assets/picture/hardware/amd-rx-550.jpg" alt="Third slide">
               </div>
             </div>
             <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
@@ -143,8 +143,8 @@
 
             <div class="col-lg-4 col-md-6 mb-4">
               <div class="card h-100">
-                <a href="#"><img class="card-img-top" src="http://placehold.it/700x400" alt=""></a>
-                <div class="card-body">
+                <a href="#"><img class="card-img-top" src="http://35.163.12.144/slotyworld/assets/picture/hardware/fx-6300.jpg" alt=""></a>
+								<div class="card-body">
                   <h4 class="card-title">
                     <a href="item1.html">
 											<?php
@@ -159,7 +159,7 @@
 										  }
 
 											?>
-					</a>
+										</a>
                   </h4>
                   <h5>
 										<?php
@@ -205,7 +205,7 @@
 
             <div class="col-lg-4 col-md-6 mb-4">
               <div class="card h-100">
-                <a href="#"><img class="card-img-top" src="http://placehold.it/700x400" alt=""></a>
+                <a href="#"><img class="card-img-top" src="http://35.163.12.144/slotyworld/assets/picture/hardware/ssd-apacer.jpg" alt=""></a>
                 <div class="card-body">
                   <h4 class="card-title">
                     <a href="#">
@@ -260,7 +260,7 @@
 
             <div class="col-lg-4 col-md-6 mb-4">
               <div class="card h-100">
-                <a href="#"><img class="card-img-top" src="http://placehold.it/700x400" alt=""></a>
+                <a href="#"><img class="card-img-top" src="http://35.163.12.144/slotyworld/assets/picture/hardware/amd-rx-550.jpg" alt=""></a>
                 <div class="card-body">
                   <h4 class="card-title">
                     <a href="#">
