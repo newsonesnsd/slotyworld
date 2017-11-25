@@ -346,72 +346,6 @@
                         <li>
                             <a href="forms.php"><i class="fa fa-edit fa-fw"></i> Forms</a>
                         </li>
-                        <li>
-                            <a href="#"><i class="fa fa-wrench fa-fw"></i> UI Elements<span class="fa arrow"></span></a>
-                            <ul class="nav nav-second-level">
-                                <li>
-                                    <a href="panels-wells.html">Panels and Wells</a>
-                                </li>
-                                <li>
-                                    <a href="buttons.html">Buttons</a>
-                                </li>
-                                <li>
-                                    <a href="notifications.html">Notifications</a>
-                                </li>
-                                <li>
-                                    <a href="typography.html">Typography</a>
-                                </li>
-                                <li>
-                                    <a href="icons.html"> Icons</a>
-                                </li>
-                                <li>
-                                    <a href="grid.html">Grid</a>
-                                </li>
-                            </ul>
-                            <!-- /.nav-second-level -->
-                        </li>
-                        <li>
-                            <a href="#"><i class="fa fa-sitemap fa-fw"></i> Multi-Level Dropdown<span class="fa arrow"></span></a>
-                            <ul class="nav nav-second-level">
-                                <li>
-                                    <a href="#">Second Level Item</a>
-                                </li>
-                                <li>
-                                    <a href="#">Second Level Item</a>
-                                </li>
-                                <li>
-                                    <a href="#">Third Level <span class="fa arrow"></span></a>
-                                    <ul class="nav nav-third-level">
-                                        <li>
-                                            <a href="#">Third Level Item</a>
-                                        </li>
-                                        <li>
-                                            <a href="#">Third Level Item</a>
-                                        </li>
-                                        <li>
-                                            <a href="#">Third Level Item</a>
-                                        </li>
-                                        <li>
-                                            <a href="#">Third Level Item</a>
-                                        </li>
-                                    </ul>
-                                    <!-- /.nav-third-level -->
-                                </li>
-                            </ul>
-                            <!-- /.nav-second-level -->
-                        </li>
-                        <li>
-                            <a href="#"><i class="fa fa-files-o fa-fw"></i> Sample Pages<span class="fa arrow"></span></a>
-                            <ul class="nav nav-second-level">
-                                <li>
-                                    <a href="blank.html">Blank Page</a>
-                                </li>
-                                <li>
-                                    <a href="login.html">Login Page</a>
-                                </li>
-                            </ul>
-                            <!-- /.nav-second-level -->
-                        </li>
                     </ul>
                 </div>
                 <!-- /.sidebar-collapse -->
@@ -450,6 +384,8 @@
                             $totalRow = $row['invoiceid'];
                             break;
                         }
+                        mysql_free_result($result);
+                        // $conn -> mysql_free_result($result);
                     ?>
 
                 <?php for ($i=1; $i <= $totalRow ; $i++): ?>
@@ -460,7 +396,6 @@
                         <!-- /.panel-heading -->
                         <div class="panel-body">
                             <div class="table-responsive">
-
                                 <table class="table table-striped table-bordered table-hover">
                                     <thead>
                                         <tr>
@@ -473,18 +408,44 @@
                                         </tr>
                                     </thead>
                                     <tbody>
+
                                         <?php
-                                            $sql = "select i.invoiceid AS invoice, p.productname AS PDN, p.price PDP, cd.quantity QUAN,
-                                                    cd.totalprice PTTP,  i.totalprice ITTP  from User u join Invoice i on i.userid = u.userid
-                            						join Cart c on i.cartid = c.cartid
-                            						join CartDetail cd on cd.cartid = c.cartid
-                                                    join Product p on p.productid = cd.productid";
-                                            $result = $conn->query($sql);
+                                            //echo "$i";
+                                            // $sql = "SELECT i.invoiceid AS invoice, p.productname AS PDN, p.price PDP,
+                                            //         cd.quantity QUAN, cd.totalprice PTTP,  i.totalprice ITTP
+                                            //         from User u join Invoice i on i.userid = u.userid
+                            				// 		join Cart c on i.cartid = c.cartid
+                            				// 		join CartDetail cd on cd.cartid = c.cartid
+                                            //         join Product p on p.productid = cd.productid
+                                            //         ";
+                                            // $result = $conn->query($sql);
+
+                                            // $stmt = $conn->prepare("SELECT i.invoiceid AS invoice, p.productname AS PDN, p.price PDP,
+                                            //         cd.quantity QUAN, cd.totalprice PTTP,  i.totalprice ITTP
+                                            //         from User u join Invoice i on i.userid = u.userid
+                            				// 		join Cart c on i.cartid = c.cartid
+                            				// 		join CartDetail cd on cd.cartid = c.cartid
+                                            //         join Product p on p.productid = cd.productid
+                                            //         where invoice = ?");
+                                            $sql =  "SELECT `i`.`invoiceid` AS `inv`, `p`.`productname` AS `PDN`, `p`.`price` AS `PDP`,
+                                                    `cd`.`quantity` AS `QUAN`, `cd`.`totalprice` AS `PTTP`,  `i`.`totalprice` AS `ITTP`
+                                                    from `User` `u` join `Invoice` `i` on `i`.`userid` = `u`.`userid`
+                                                    join `Cart` `c` on `i`.`cartid` = `c`.`cartid`
+                                                    join `CartDetail` `cd` on `cd`.`cartid` = `c`.`cartid`
+                                                    join `Product` `p` on `p`.`productid` = `cd`.`productid`
+                                                    where `inv` = 1";
+                                                    var_dump($conn->prepare($sql));
+                                            if($qurey = $conn-> prepare($sql)) { // assuming $mysqli is the connection
+                                            echo('damn php is suck');
+                                            $query->bind_param('i', $i);
+                                            $query->execute();
+                                            // any additional code you need would go here.
+                                            $result = $sql->get_result();
                                             if ($result->num_rows > 0) {
                                                 // output data of each row
                                                 while($row = $result->fetch_assoc()) {
                                                     echo "<tr>";
-                                                    echo "<td>" .$row["invoice"]."</td>";
+                                                    echo "<td>" .$row["inv"]."</td>";
                                                     echo "<td>" .$row["PDN"]."</td>";
                                                     echo "<td>" .$row["PDP"]."</td>";
                                                     echo "<td>" .$row["QUAN"]."</td>";
@@ -494,6 +455,14 @@
 
                                                 }
                                             }
+                                        } else {
+                                            $error = $conn->errno . ' ' . $conn->error;
+                                            echo $error; // 1054 Unknown column 'foo' in 'field list'
+                                        }
+                                            // $stmt->bind_param('s', $i);
+                                            // $stmt->execute();
+
+
                                         ?>
                                     </tbody>
                                 </table>

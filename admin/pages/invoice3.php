@@ -438,15 +438,24 @@
             </div>
             <!-- Show All Users -->
             <div class="row">
-                <div class="col-lg-12">
+                <?php
+                    $totalRow = 0;
+                    $sql = "select invoiceid from Invoice ORDER by invoiceid desc limit 1";
+                    $result = $conn->query($sql);
+                    while ($row = $result -> fetch_assoc()) {
+                        # code...
+                        $totalRow = $row['invoiceid'];
+                        break;
+                    }
+                ?>
+                <?php for ($i=1; $i <= $totalRow ; $i++): ?>
                     <div class="panel panel-default">
                         <div class="panel-heading">
-                            All Invoice
+                            Invoice <?php echo $i ?>
                         </div>
                         <!-- /.panel-heading -->
                         <div class="panel-body">
                             <div class="table-responsive">
-
                                 <table class="table table-striped table-bordered table-hover">
                                     <thead>
                                         <tr>
@@ -459,13 +468,37 @@
                                         </tr>
                                     </thead>
                                     <tbody>
+
                                         <?php
-                                            $sql = "select i.invoiceid AS invoice, p.productname AS PDN, p.price PDP, cd.quantity QUAN,
-                                                    cd.totalprice PTTP,  i.totalprice ITTP  from User u join Invoice i on i.userid = u.userid
+                                            //echo "$i";
+                                            $sql = "SELECT i.invoiceid AS invoice, p.productname AS PDN, p.price PDP,
+                                                    cd.quantity QUAN, cd.totalprice PTTP,  i.totalprice ITTP
+                                                    from User u join Invoice i on i.userid = u.userid
                             						join Cart c on i.cartid = c.cartid
                             						join CartDetail cd on cd.cartid = c.cartid
-                                                    join Product p on p.productid = cd.productid";
+                                                    join Product p on p.productid = cd.productid
+                                                    ";
                                             $result = $conn->query($sql);
+
+                                            // $stmt = $conn->prepare("SELECT i.invoiceid AS invoice, p.productname AS PDN, p.price PDP,
+                                            //         cd.quantity QUAN, cd.totalprice PTTP,  i.totalprice ITTP
+                                            //         from User u join Invoice i on i.userid = u.userid
+                            				// 		join Cart c on i.cartid = c.cartid
+                            				// 		join CartDetail cd on cd.cartid = c.cartid
+                                            //         join Product p on p.productid = cd.productid
+                                            //         where invoice = ?");
+                                            // $sql =  "SELECT `i`.`invoiceid` AS `inv`, `p`.`productname` AS `PDN`, `p`.`price` AS `PDP`,
+                                            //         `cd`.`quantity` AS `QUAN`, `cd`.`totalprice` AS `PTTP`,  `i`.`totalprice` AS `ITTP`
+                                            //         from `User` `u` join `Invoice` `i` on `i`.`userid` = `u`.`userid`
+                                            //         join `Cart` `c` on `i`.`cartid` = `c`.`cartid`
+                                            //         join `CartDetail` `cd` on `cd`.`cartid` = `c`.`cartid`
+                                            //         join `Product` `p` on `p`.`productid` = `cd`.`productid`
+                                            //         where `inv` = ?";
+                                            // if($qurey = $conn-> prepare($sql)) { // assuming $mysqli is the connection
+                                            // $query->bind_param('s', $i);
+                                            // $query->execute();
+                                            // any additional code you need would go here.
+                                            // $result = $sql->get_result();
                                             if ($result->num_rows > 0) {
                                                 // output data of each row
                                                 while($row = $result->fetch_assoc()) {
@@ -480,6 +513,11 @@
 
                                                 }
                                             }
+
+                                            // $stmt->bind_param('s', $i);
+                                            // $stmt->execute();
+
+
                                         ?>
                                     </tbody>
                                 </table>
@@ -488,8 +526,7 @@
                         </div>
                         <!-- /.panel-body -->
                     </div>
-                    <!-- /.panel -->
-                </div>
+                <?php endfor; ?>
                 <!-- /.col-lg-6 -->
                 <!-- /.col-lg-6 -->
             </div>
