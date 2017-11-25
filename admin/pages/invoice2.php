@@ -9,7 +9,7 @@
     <meta name="description" content="">
     <meta name="author" content="">
 
-    <title>Admin - Show Users</title>
+    <title>Admin - Invoice</title>
     <?php
         $host = "35.163.12.144";
         $username = "int203";
@@ -22,6 +22,7 @@
         if(!$conn){
           echo "เชื่อมต่อไม่ได้";
         }
+        mysqli_set_charset($conn,"utf8");
     ?>
 
     <!-- Bootstrap Core CSS -->
@@ -289,19 +290,58 @@
                             <a href="index.php"><i class="fa fa-dashboard fa-fw"></i> Dashboard</a>
                         </li>
                         <li>
-                            <a href="#"><i class="fa fa-pie-chart fa-fw"></i> Charts<span class="fa arrow"></span></a>
+                            <a href="#"><i class="fa fa-pie-chart fa-fw"></i> Stocks<span class="fa arrow"></span></a>
                             <ul class="nav nav-second-level">
                                 <li>
-                                    <a href="flot.php">Flot Charts</a>
+                                    <a href="stock1.php">
+                                        <?php
+                                            //statement
+                                            $sql = "select categoryname from Category where categoryname = 'Hardware'";
+                                            $result = $conn->query($sql);
+                                            if ($result->num_rows > 0) {
+                                                // output data of each row
+                                                while($row = $result->fetch_assoc()) {
+                                                    echo $row["categoryname"];
+                                                }
+                                            }
+                                        ?>
+                                    </a>
                                 </li>
                                 <li>
-                                    <a href="morris.php">Morris.js Charts</a>
+                                    <a href="stock2.php">
+                                        <?php
+                							//statement
+                							$sql = "select categoryname from Category where categoryname = 'Software'";
+                							$result = $conn->query($sql);
+                							if ($result->num_rows > 0) {
+                								// output data of each row
+                								while($row = $result->fetch_assoc()) {
+                									echo $row["categoryname"];
+                								}
+                							}
+                						?>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="stock3.php">
+                                        <?php
+                							//statement
+                							$sql = "select categoryname from Category where categoryname = 'Others'";
+                							$result = $conn->query($sql);
+                							if ($result->num_rows > 0) {
+                								// output data of each row
+                								while($row = $result->fetch_assoc()) {
+                									echo $row["categoryname"];
+                								}
+                							}
+                						?>
+                                    </a>
                                 </li>
                             </ul>
                             <!-- /.nav-second-level -->
                         </li>
                         <li>
-                            <a href="tables.php"><i class="fa fa-table fa-fw"></i> Tables</a>
+                            <a href="invoice.php"><i class="fa fa-shopping-cart fa-fw"></i> Invoice</a>
                         </li>
                         <li>
                             <a href="forms.php"><i class="fa fa-edit fa-fw"></i> Forms</a>
@@ -310,22 +350,22 @@
                             <a href="#"><i class="fa fa-wrench fa-fw"></i> UI Elements<span class="fa arrow"></span></a>
                             <ul class="nav nav-second-level">
                                 <li>
-                                    <a href="panels-wells.php">Panels and Wells</a>
+                                    <a href="panels-wells.html">Panels and Wells</a>
                                 </li>
                                 <li>
-                                    <a href="buttons.php">Buttons</a>
+                                    <a href="buttons.html">Buttons</a>
                                 </li>
                                 <li>
-                                    <a href="notifications.php">Notifications</a>
+                                    <a href="notifications.html">Notifications</a>
                                 </li>
                                 <li>
-                                    <a href="typography.php">Typography</a>
+                                    <a href="typography.html">Typography</a>
                                 </li>
                                 <li>
-                                    <a href="icons.php"> Icons</a>
+                                    <a href="icons.html"> Icons</a>
                                 </li>
                                 <li>
-                                    <a href="grid.php">Grid</a>
+                                    <a href="grid.html">Grid</a>
                                 </li>
                             </ul>
                             <!-- /.nav-second-level -->
@@ -364,10 +404,10 @@
                             <a href="#"><i class="fa fa-files-o fa-fw"></i> Sample Pages<span class="fa arrow"></span></a>
                             <ul class="nav nav-second-level">
                                 <li>
-                                    <a href="blank.php">Blank Page</a>
+                                    <a href="blank.html">Blank Page</a>
                                 </li>
                                 <li>
-                                    <a href="login.php">Login Page</a>
+                                    <a href="login.html">Login Page</a>
                                 </li>
                             </ul>
                             <!-- /.nav-second-level -->
@@ -382,7 +422,9 @@
         <div id="page-wrapper">
             <div class="row">
                 <div class="col-lg-12">
-                    <h1 class="page-header">Users</h1>
+                    <h1 class="page-header">
+                        Invoice
+                    </h1>
                 </div>
                 <!-- /.col-lg-12 -->
             </div>
@@ -394,13 +436,24 @@
                 </div>
                 <!-- /.col-lg-12 -->
             </div>
-            <!-- /.row -->
             <!-- Show All Users -->
             <div class="row">
                 <div class="col-lg-12">
+                <?php
+                    $totalRow = 0;
+                    $sql = "select invoiceid from Invoice ORDER by invoiceid desc limit 1";
+                    $result = $conn->query($sql);
+                    while ($row = $result -> fetch_assoc()) {
+                        # code...
+                        $totalRow = $row['invoiceid'];
+                        break;
+                    }
+                ?>
+
+                <?php for ($i=1; $i <= $totalRow ; $i++): ?>
                     <div class="panel panel-default">
                         <div class="panel-heading">
-                            Customers Detail
+                            Invoice <?php echo $i; ?>
                         </div>
                         <!-- /.panel-heading -->
                         <div class="panel-body">
@@ -410,33 +463,42 @@
                                     <thead>
                                         <tr>
                                             <th>#</th>
-                                            <th>First Name</th>
-                                            <th>Last Name</th>
-                                            <th>Username</th>
-                                            <th>Gender</th>
-                                            <th>DOB</th>
-                                            <th>Address</th>
-                                            <th>Postcode</th>
+                                            <th>Product</th>
+                                            <th>Price Per Product</th>
+                                            <th>Quantity</th>
+                                            <th>Total Product Price</th>
+                                            <th>Total Price</th>
                                         </tr>
                                     </thead>
                                     <tbody>
                                         <?php
-                                            $sql = "select * from User U join Role R on U.roleid = R.roleid  where R.roleDescription = 'Customer'";
-                                            $result = $conn->query($sql);
+                                            // $sql = "select i.invoiceid AS invoice, p.productname AS PDN, p.price PDP, cd.quantity QUAN,
+                                            //         cd.totalprice PTTP,  i.totalprice ITTP  from User u join Invoice i on i.userid = u.userid
+                                            //         join Cart c on i.cartid = c.cartid
+                                            //         join CartDetail cd on cd.cartid = c.cartid
+                                            //         join Product p on p.productid = cd.productid where invoice = ?";
+                                            // $result = $conn->query($sql);
+                                            $stmt = $conn->prepare("SELECT i.invoiceid AS invoice, p.productname AS PDN,
+                                                    p.price PDP, cd.quantity QUAN,
+                                                    cd.totalprice PTTP,  i.totalprice ITTP
+                                                    from User u join Invoice i on i.userid = u.userid
+                                                    join Cart c on i.cartid = c.cartid
+                                                    join CartDetail cd on cd.cartid = c.cartid
+                                                    join Product p on p.productid = cd.productid where invoice = ?");
+                                            $stmt->bind_param("s", $i);
+                                            $stmt->execute();
+                                            $result = $stmt->get_result();
                                             if ($result->num_rows > 0) {
                                                 // output data of each row
                                                 while($row = $result->fetch_assoc()) {
                                                     echo "<tr>";
-                                                    echo "<td>" .$row["userid"]."</td>";
-                                                    echo "<td>" .$row["fname"]."</td>";
-                                                    echo "<td>" .$row["lname"]."</td>";
-                                                    echo "<td>" .$row["email"]."</td>";
-                                                    echo "<td>" .$row["gender"]."</td>";
-                                                    echo "<td>" .$row["dob"]."</td>";
-                                                    echo "<td>" .$row["address"].", ".$row["city"]."</td>";
-                                                    echo "<td>" .$row["postcode"]."</td>";
+                                                    echo "<td>" .$row["invoice"]."</td>";
+                                                    echo "<td>" .$row["PDN"]."</td>";
+                                                    echo "<td>" .$row["PDP"]."</td>";
+                                                    echo "<td>" .$row["QUAN"]."</td>";
+                                                    echo "<td>" .$row["PTTP"]."</td>";
+                                                    echo "<td>" .$row["ITTP"]."</td>";
                                                     echo "</tr>";
-
                                                 }
                                             }
                                         ?>
@@ -445,80 +507,13 @@
                             </div>
                             <!-- /.table-responsive -->
                         </div>
-                        <!-- /.panel-body -->
                     </div>
-                    <!-- /.panel -->
+                <?php endfor; ?>
                 </div>
+            </div>
                 <!-- /.col-lg-6 -->
-                <div class="col-lg-6">
-
-                    <!-- /.panel -->
-                </div>
                 <!-- /.col-lg-6 -->
             </div>
-
-            <!-- Show Admin -->
-            <div class="row">
-                <div class="col-lg-12">
-                    <div class="panel panel-default">
-                        <div class="panel-heading">
-                            Admin Details
-                        </div>
-                        <!-- /.panel-heading -->
-                        <div class="panel-body">
-                            <div class="table-responsive">
-
-                                <table class="table table-striped table-bordered table-hover">
-                                    <thead>
-                                        <tr>
-                                            <th>#</th>
-                                            <th>First Name</th>
-                                            <th>Last Name</th>
-                                            <th>Username</th>
-                                            <th>Gender</th>
-                                            <th>DOB</th>
-                                            <th>Address</th>
-                                            <th>Postcode</th>
-                                        </tr>
-                                    </thead>
-                                    <tbody>
-                                        <?php
-                                            $sql = "select * from User U join Role R on U.roleid = R.roleid  where R.roleDescription = 'Admin'";
-                                            $result = $conn->query($sql);
-                                            if ($result->num_rows > 0) {
-                                                // output data of each row
-                                                while($row = $result->fetch_assoc()) {
-                                                    echo "<tr>";
-                                                    echo "<td>" .$row["userid"]."</td>";
-                                                    echo "<td>" .$row["fname"]."</td>";
-                                                    echo "<td>" .$row["lname"]."</td>";
-                                                    echo "<td>" .$row["email"]."</td>";
-                                                    echo "<td>" .$row["gender"]."</td>";
-                                                    echo "<td>" .$row["dob"]."</td>";
-                                                    echo "<td>" .$row["address"].", ".$row["city"]."</td>";
-                                                    echo "<td>" .$row["postcode"]."</td>";
-                                                    echo "</tr>";
-
-                                                }
-                                            }
-                                        ?>
-                                    </tbody>
-                                </table>
-                            </div>
-                            <!-- /.table-responsive -->
-                        </div>
-                        <!-- /.panel-body -->
-                    </div>
-                    <!-- /.panel -->
-                </div>
-                <!-- /.col-lg-6 -->
-                <div class="col-lg-6">
-
-                    <!-- /.panel -->
-                </div>
-                <!-- /.col-lg-6 -->
-            </div>
-            <!-- /.row -->
         </div>
         <!-- /#page-wrapper -->
 

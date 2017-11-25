@@ -292,7 +292,7 @@
                             <a href="index.php"><i class="fa fa-dashboard fa-fw"></i> Dashboard</a>
                         </li>
                         <li>
-                            <a href="#"><i class="fa fa-bar-chart-o fa-fw"></i> Stock<span class="fa arrow"></span></a>
+                            <a href="#"><i class="fa fa-pie-chart fa-fw"></i> Stock<span class="fa arrow"></span></a>
                             <ul class="nav nav-second-level">
                                 <li>
                                     <a href="stock1.php">
@@ -343,7 +343,10 @@
                             <!-- /.nav-second-level -->
                         </li>
                         <li>
-                            <a href="tables.php"><i class="fa fa-table fa-fw"></i> Tables</a>
+                            <a href="invoice.php"><i class="fa fa-shopping-cart fa-fw"></i> Invoice</a>
+                        </li>
+                        <li>
+                            <a href="tracking.php"><i class="fa fa-truck fa-fw"></i>Tracking</a>
                         </li>
                         <li>
                             <a href="forms.html"><i class="fa fa-edit fa-fw"></i> Forms</a>
@@ -566,7 +569,7 @@
                     <!-- /.panel -->
                     <div class="panel panel-default">
                         <div class="panel-heading">
-                            <i class="fa fa-bar-chart-o fa-fw"></i> Bar Chart Example
+                            <i class="fa fa-pie-chart fa-fw"></i> Bar Chart Example
                             <div class="pull-right">
                                 <div class="btn-group">
                                     <button type="button" class="btn btn-default btn-xs dropdown-toggle" data-toggle="dropdown">
