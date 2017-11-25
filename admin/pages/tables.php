@@ -51,7 +51,7 @@
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                 </button>
-                <a class="navbar-brand" href="index.php">SB Admin v2.0</a>
+                <a class="navbar-brand" href="index.html">SB Admin v2.0</a>
             </div>
             <!-- /.navbar-header -->
 
@@ -280,25 +280,13 @@
                             <!-- /input-group -->
                         </li>
                         <li>
-                            <a href="index.php"><i class="fa fa-dashboard fa-fw"></i> Dashboard</a>
+                            <a href="index.html"><i class="fa fa-dashboard fa-fw"></i> Dashboard</a>
                         </li>
                         <li>
-                            <a href="#"><i class="fa fa-bar-chart-o fa-fw"></i> Stock<span class="fa arrow"></span></a>
+                            <a href="#"><i class="fa fa-bar-chart-o fa-fw"></i> Charts<span class="fa arrow"></span></a>
                             <ul class="nav nav-second-level">
                                 <li>
-                                    <a href="flot.html">
-                                        <?php
-                							//statement
-                							$sql = "select categoryname from Category where categoryname = 'Hardware'";
-                							$result = $conn->query($sql);
-                							if ($result->num_rows > 0) {
-                								// output data of each row
-                								while($row = $result->fetch_assoc()) {
-                									echo $row["categoryname"];
-                								}
-                							}
-                						?>
-                                    </a>
+                                    <a href="flot.html">Flot Charts</a>
                                 </li>
                                 <li>
                                     <a href="morris.html">Morris.js Charts</a>
