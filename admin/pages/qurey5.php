@@ -63,6 +63,7 @@
             <!-- /.navbar-header -->
 
 
+
             <div class="navbar-default sidebar" role="navigation">
                 <div class="sidebar-nav navbar-collapse">
                     <ul class="nav" id="side-menu">
@@ -165,7 +166,7 @@
                     <h1 class="page-header">
                         <?php
                             //statement
-                            $sql = "select categoryname from Category where categoryname = 'Hardware'";
+                            $sql = "select categoryname from Category where categoryname = 'Others'";
                             $result = $conn->query($sql);
                             if ($result->num_rows > 0) {
                                 // output data of each row
@@ -191,7 +192,7 @@
                 <div class="col-lg-12">
                     <div class="panel panel-default">
                         <div class="panel-heading">
-                            Tracking
+                            Hardware Stock Detail
                         </div>
                         <!-- /.panel-heading -->
                         <div class="panel-body">
@@ -211,7 +212,7 @@
                                         <?php
                                             $sql = "select * from Product P join Category C
                                                 on P.categoryid = C.categoryid
-                                                where C.categoryname = 'Hardware'";
+                                                where C.categoryname = 'Others'";
                                             $result = $conn->query($sql);
                                             if ($result->num_rows > 0) {
                                                 // output data of each row

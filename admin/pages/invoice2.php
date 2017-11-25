@@ -384,7 +384,7 @@
                             $totalRow = $row['invoiceid'];
                             break;
                         }
-                        mysql_free_result($result);
+                        ;
                         // $conn -> mysql_free_result($result);
                     ?>
 
