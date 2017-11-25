@@ -1,7 +1,4 @@
 <?php
-if (session_status() == PHP_SESSION_NONE) {
-        session_start();
-}
     $host = "35.163.12.144";
     $username = "int203";
     $password = "lovesql";
@@ -13,4 +10,9 @@ if (session_status() == PHP_SESSION_NONE) {
     if(!$conn){
         echo "เชื่อมต่อไม่ได้";
     }
+    if (session_status() == PHP_SESSION_NONE) {
+            session_destroy();
+            header('Location: index.php');
+    }
+
 ?>
