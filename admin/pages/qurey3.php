@@ -209,19 +209,33 @@
                                     </thead>
                                     <tbody>
                                         <?php
-                                            $sql = "select * from Product P join Category C
-                                                on P.categoryid = C.categoryid
-                                                where C.categoryname = 'Others'";
+                                            $sql = "select * from User u 
+                                            left join Invoice i on u.userid = i.userid 
+                                            where u.roleid = 1 
+                                            and i.invoiceid is null";
                                             $result = $conn->query($sql);
                                             if ($result->num_rows > 0) {
                                                 // output data of each row
                                                 while($row = $result->fetch_assoc()) {
                                                     echo "<tr>";
-                                                    echo "<td>" .$row["productid"]."</td>";
-                                                    echo "<td>" .$row["productname"]."</td>";
-                                                    echo "<td>" .$row["details"]."</td>";
-                                                    echo "<td>" .$row["price"]."</td>";
-                                                    echo "<td>" .$row["quantity"]."</td>";
+                                                    echo "<td>" .$row["userid"]."</td>";
+                                                    echo "<td>" .$row["fname"]."</td>";
+                                                    echo "<td>" .$row["lname"]."</td>";
+                                                    echo "<td>" .$row["email"]."</td>";
+                                                    echo "<td>" .$row["gender"]."</td>";
+                                                    echo "<td>" .$row["dob"]."</td>";
+                                                    echo "<td>" .$row["telno"]."</td>";
+                                                    echo "<td>" .$row["address"]."</td>";
+                                                    echo "<td>" .$row["city"]."</td>";
+                                                    echo "<td>" .$row["postcode"]."</td>";
+                                                    echo "<td>" .$row["password"]."</td>";
+                                                    echo "<td>" .$row["roleid"]."</td>";
+                                                    echo "<td>" .$row["invoiceid"]."</td>";
+                                                    echo "<td>" .$row["totalprice"]."</td>";
+                                                    echo "<td>" .$row["buytime"]."</td>";
+                                                    echo "<td>" .$row["description"]."</td>";
+                                                    echo "<td>" .$row["userid"]."</td>";
+                                                    echo "<td>" .$row["cartid"]."</td>";
                                                     echo "</tr>";
 
                                                 }

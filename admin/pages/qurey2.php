@@ -201,27 +201,21 @@
                                     <thead>
                                         <tr>
                                             <th>#</th>
-                                            <th>Name</th>
-                                            <th>Details</th>
-                                            <th>Prices</th>
-                                            <th>Quantity</th>
+                                            <th>Name/th>
+                                            <th>Total Invoice</th>
                                         </tr>
                                     </thead>
                                     <tbody>
                                         <?php
-                                            $sql = "select * from Product P join Category C
-                                                on P.categoryid = C.categoryid
-                                                where C.categoryname = 'Others'";
+                                            $sql = "select count(*) as countInvoice, u.userid userid, u.fname Name from User u join Invoice i on i.userid = u.userid group by i.userid;";
                                             $result = $conn->query($sql);
                                             if ($result->num_rows > 0) {
                                                 // output data of each row
                                                 while($row = $result->fetch_assoc()) {
                                                     echo "<tr>";
-                                                    echo "<td>" .$row["productid"]."</td>";
-                                                    echo "<td>" .$row["productname"]."</td>";
-                                                    echo "<td>" .$row["details"]."</td>";
-                                                    echo "<td>" .$row["price"]."</td>";
-                                                    echo "<td>" .$row["quantity"]."</td>";
+                                                    echo "<td>" .$row["userid"]."</td>";
+                                                    echo "<td>" .$row["Name"]."</td>";
+                                                    echo "<td>" .$row["countInvoice"]."</td>";
                                                     echo "</tr>";
 
                                                 }

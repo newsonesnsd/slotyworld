@@ -200,28 +200,23 @@
                                 <table class="table table-striped table-bordered table-hover">
                                     <thead>
                                         <tr>
-                                            <th>#</th>
                                             <th>Name</th>
-                                            <th>Details</th>
-                                            <th>Prices</th>
-                                            <th>Quantity</th>
+                                            <th>Buytime</th>
                                         </tr>
                                     </thead>
                                     <tbody>
                                         <?php
-                                            $sql = "select * from Product P join Category C
-                                                on P.categoryid = C.categoryid
-                                                where C.categoryname = 'Others'";
+                                            $sql = "select CONCAT(u.fname, u.lname) as name , buytime from User u
+                                            join Invoice i on u.userid = i.userid where u.roleId = 1 
+                                            and i.buytime between '2017-11-1' and '2017-11-15';";
                                             $result = $conn->query($sql);
                                             if ($result->num_rows > 0) {
                                                 // output data of each row
                                                 while($row = $result->fetch_assoc()) {
                                                     echo "<tr>";
-                                                    echo "<td>" .$row["productid"]."</td>";
-                                                    echo "<td>" .$row["productname"]."</td>";
-                                                    echo "<td>" .$row["details"]."</td>";
-                                                    echo "<td>" .$row["price"]."</td>";
-                                                    echo "<td>" .$row["quantity"]."</td>";
+                                                    echo "<td>" .$row["fname"].
+                                                    echo" ".$row[lname]."</td>";
+                                                    echo "<td>" .$row["buytime"]."</td>";
                                                     echo "</tr>";
 
                                                 }
