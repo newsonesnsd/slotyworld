@@ -163,7 +163,7 @@
             <div class="row">
                 <div class="col-lg-12">
                     <h1 class="page-header">
-                        Qurey: 3
+                        ข้อมูลลูกค้าที่ยังไม่มีรายการสั่งสินค้า
                     </h1>
                 </div>
                 <!-- /.col-lg-12 -->
@@ -181,7 +181,7 @@
                 <div class="col-lg-12">
                     <div class="panel panel-default">
                         <div class="panel-heading">
-                            SQL Statement
+                            <!-- SQL Statement -->
                         </div>
                         <!-- /.panel-heading -->
                         <div class="panel-body">
@@ -232,7 +232,7 @@
                                                     echo "<td>" .$row["city"]."</td>";
                                                     echo "<td>" .$row["postcode"]."</td>";
                                                     echo "<td>" .$row["password"]."</td>";
-                                                    echo "<td>" .$row["roleid"]."</td>";
+                                                    echo "<td>" .$row["roleId"]."</td>";
                                                     echo "<td>" .$row["invoiceid"]."</td>";
                                                     echo "<td>" .$row["totalprice"]."</td>";
                                                     echo "<td>" .$row["buytime"]."</td>";

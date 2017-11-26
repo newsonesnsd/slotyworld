@@ -163,7 +163,7 @@
             <div class="row">
                 <div class="col-lg-12">
                     <h1 class="page-header">
-                        Qurey: 2
+                        จำนวนการสั่งซื้อสินค้า
                     </h1>
                 </div>
                 <!-- /.col-lg-12 -->
@@ -181,7 +181,7 @@
                 <div class="col-lg-12">
                     <div class="panel panel-default">
                         <div class="panel-heading">
-                            SQL Statement
+                            
                         </div>
                         <!-- /.panel-heading -->
                         <div class="panel-body">
@@ -190,21 +190,25 @@
                                 <table class="table table-striped table-bordered table-hover">
                                     <thead>
                                         <tr>
-                                            <th>#</th>
-                                            <th>Name</th>
+                                            <th>Userid</th>
+                                            <th>FirstName</th>
+                                            <th>Lastname</th>
                                             <th>Total Invoice</th>
                                         </tr>
                                     </thead>
                                     <tbody>
                                         <?php
-                                            $sql = "select count(*) as countInvoice, u.userid userid, u.fname Name from User u join Invoice i on i.userid = u.userid group by i.userid;";
+                                            $sql = "select count(*) as countInvoice, u.userid , u.fname, u.lname from User u
+                                            join Invoice i on i.userid = u.userid
+                                            group by i.userid;";
                                             $result = $conn->query($sql);
                                             if ($result->num_rows > 0) {
                                                 // output data of each row
                                                 while($row = $result->fetch_assoc()) {
                                                     echo "<tr>";
                                                     echo "<td>" .$row["userid"]."</td>";
-                                                    echo "<td>" .$row["Name"]."</td>";
+                                                    echo "<td>" .$row["fname"]."</td>";
+                                                    echo "<td>" .$row["lname"]."</td>";
                                                     echo "<td>" .$row["countInvoice"]."</td>";
                                                     echo "</tr>";
 

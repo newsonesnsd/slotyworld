@@ -164,17 +164,18 @@
             <div class="row">
                 <div class="col-lg-12">
                     <h1 class="page-header">
-                        <?php
+                        <!-- <?php
                             //statement
-                            $sql = "select categoryname from Category where categoryname = 'Others'";
-                            $result = $conn->query($sql);
-                            if ($result->num_rows > 0) {
-                                // output data of each row
-                                while($row = $result->fetch_assoc()) {
-                                    echo "Category: ".$row["categoryname"];
-                                }
-                            }
-                        ?>
+                            // $sql = "select categoryname from Category where categoryname = 'Others'";
+                            // $result = $conn->query($sql);
+                            // if ($result->num_rows > 0) {
+                            //     // output data of each row
+                            //     while($row = $result->fetch_assoc()) {
+                            //         echo "Category: ".$row["categoryname"];
+                            //     }
+                            // }
+                        ?> -->
+                        ข้อมูลลูกค้าที่ยังไม่มีรายการสั่งซื้อ
                     </h1>
                 </div>
                 <!-- /.col-lg-12 -->
@@ -192,7 +193,7 @@
                 <div class="col-lg-12">
                     <div class="panel panel-default">
                         <div class="panel-heading">
-                            Hardware Stock Detail
+                            <!-- Hardware Stock Detail -->
                         </div>
                         <!-- /.panel-heading -->
                         <div class="panel-body">
@@ -201,28 +202,23 @@
                                 <table class="table table-striped table-bordered table-hover">
                                     <thead>
                                         <tr>
-                                            <th>#</th>
-                                            <th>Name</th>
-                                            <th>Details</th>
-                                            <th>Prices</th>
-                                            <th>Quantity</th>
+                                            <th>Userid</th>
+                                            <th>FirstName</th>
+                                            <th>LastName</th>
                                         </tr>
                                     </thead>
                                     <tbody>
                                         <?php
-                                            $sql = "select * from Product P join Category C
-                                                on P.categoryid = C.categoryid
-                                                where C.categoryname = 'Others'";
+                                            $sql = "select u.userid, fname, lname from User u where not exists
+                                                    (select userid from Invoice i where i.userid = u.userid)";
                                             $result = $conn->query($sql);
                                             if ($result->num_rows > 0) {
                                                 // output data of each row
                                                 while($row = $result->fetch_assoc()) {
                                                     echo "<tr>";
-                                                    echo "<td>" .$row["productid"]."</td>";
-                                                    echo "<td>" .$row["productname"]."</td>";
-                                                    echo "<td>" .$row["details"]."</td>";
-                                                    echo "<td>" .$row["price"]."</td>";
-                                                    echo "<td>" .$row["quantity"]."</td>";
+                                                    echo "<td>" .$row["userid"]."</td>";
+                                                    echo "<td>" .$row["fname"]."</td>";
+                                                    echo "<td>" .$row["lname"]."</td>";
                                                     echo "</tr>";
 
                                                 }
