@@ -207,7 +207,7 @@
                                     <tbody>
                                         <?php
                                             $sql = "select CONCAT(u.fname, u.lname) as name , buytime from User u
-                                            join Invoice i on u.userid = i.userid where u.roleId = 1 
+                                            join Invoice i on u.userid = i.userid where u.roleId = 1
                                             and i.buytime between '2017-11-1' and '2017-11-15';";
                                             $result = $conn->query($sql);
                                             if ($result->num_rows > 0) {
@@ -215,7 +215,7 @@
                                                 while($row = $result->fetch_assoc()) {
                                                     echo "<tr>";
                                                     echo "<td>" .$row["fname"].
-                                                    echo" ".$row[lname]."</td>";
+                                                    echo" ".$row["lname"]."</td>";
                                                     echo "<td>" .$row["buytime"]."</td>";
                                                     echo "</tr>";
 

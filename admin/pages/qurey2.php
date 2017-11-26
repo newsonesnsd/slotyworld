@@ -163,17 +163,7 @@
             <div class="row">
                 <div class="col-lg-12">
                     <h1 class="page-header">
-                        <?php
-                            //statement
-                            $sql = "select categoryname from Category where categoryname = 'Others'";
-                            $result = $conn->query($sql);
-                            if ($result->num_rows > 0) {
-                                // output data of each row
-                                while($row = $result->fetch_assoc()) {
-                                    echo "Category: ".$row["categoryname"];
-                                }
-                            }
-                        ?>
+                        Qurey: 2
                     </h1>
                 </div>
                 <!-- /.col-lg-12 -->
@@ -191,7 +181,7 @@
                 <div class="col-lg-12">
                     <div class="panel panel-default">
                         <div class="panel-heading">
-                            Hardware Stock Detail
+                            SQL Statement
                         </div>
                         <!-- /.panel-heading -->
                         <div class="panel-body">
@@ -201,7 +191,7 @@
                                     <thead>
                                         <tr>
                                             <th>#</th>
-                                            <th>Name/th>
+                                            <th>Name</th>
                                             <th>Total Invoice</th>
                                         </tr>
                                     </thead>
