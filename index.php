@@ -151,7 +151,7 @@
                 <a href="#"><img class="card-img-top" src="http://35.163.12.144/slotyworld/assets/picture/hardware/fx-6300.jpg" alt=""></a>
 								<div class="card-body">
                   <h4 class="card-title">
-                    <a href="item1.html">
+                    <a href="item11.php">
 											<?php
 											//statement
 											$sql = "select productname from Product where productid = 10001";
@@ -207,7 +207,7 @@
                 <a href="#"><img class="card-img-top" src="http://35.163.12.144/slotyworld/assets/picture/hardware/ssd-apacer.jpg" alt=""></a>
                 <div class="card-body">
                   <h4 class="card-title">
-                    <a href="#">
+                    <a href="item12.php">
 											<?php
 											//statement
 											$sql = "select productname from Product where productid = 10002";
@@ -263,7 +263,7 @@
 								<a href="#"><img class="card-img-top" src="http://35.163.12.144/slotyworld/assets/picture/hardware/amd-rx-550.jpg" alt=""></a>
 								<div class="card-body">
 									<h4 class="card-title">
-										<a href="#">
+										<a href="item13.php">
 											<?php
 											//statement
 											$sql = "select productname from Product where productid = 10003";
@@ -319,7 +319,7 @@
 								<a href="#"><img class="card-img-top" src="http://35.163.12.144/slotyworld/assets/picture/software/kaspersky-small office.jpg" alt=""></a>
 								<div class="card-body">
 									<h4 class="card-title">
-										<a href="item1.html">
+										<a href="item21.php">
 											<?php
 											//statement
 											$sql = "select productname from Product where productid = 20001";
@@ -375,7 +375,7 @@
 								<a href="#"><img class="card-img-top" src="http://35.163.12.144/slotyworld/assets/picture/software/bitdefender-plus- 2017.jpg" alt=""></a>
 								<div class="card-body">
 									<h4 class="card-title">
-										<a href="#">
+										<a href="item22.php">
 											<?php
 											//statement
 											$sql = "select productname from Product where productid = 20002";
@@ -388,7 +388,7 @@
 											}
 
 											?>
-											บาท
+
 										</a>
 									</h4>
 									<h5>
@@ -404,6 +404,7 @@
 										}
 
 										?>
+										บาท
 									</h5>
 									<p class="card-text">
 										<?php
@@ -431,7 +432,7 @@
                 <a href="#"><img class="card-img-top" src="http://35.163.12.144/slotyworld/assets/picture/software/eset-nod32-antivirus.jpg" alt=""></a>
                 <div class="card-body">
                   <h4 class="card-title">
-                    <a href="#">
+                    <a href="item23.php">
 											<?php
 											//statement
 											$sql = "select productname from Product where productid = 20003";
@@ -444,7 +445,7 @@
 											}
 
 											?>
-											บาท
+
                     </a>
                   </h4>
                   <h5>
@@ -460,6 +461,7 @@
 										}
 
 										?>
+										บาท
                   </h5>
                   <p class="card-text">
 										<?php
@@ -487,7 +489,7 @@
                 <a href="#"><img class="card-img-top" src="http://35.163.12.144/slotyworld/assets/picture/others/sd-64gb.jpg" alt=""></a>
                 <div class="card-body">
                   <h4 class="card-title">
-                    <a href="item1.html">
+                    <a href="item31.php">
 											<?php
 											//statement
 											$sql = "select productname from Product where productid = 30001";
@@ -543,7 +545,7 @@
                 <a href="#"><img class="card-img-top" src="http://35.163.12.144/slotyworld/assets/picture/others/drone-dji.jpg" alt=""></a>
                 <div class="card-body">
                   <h4 class="card-title">
-                    <a href="#">
+                    <a href="item32.php">
 											<?php
 											//statement
 											$sql = "select productname from Product where productid = 30002";
@@ -556,7 +558,7 @@
 										  }
 
 											?>
-											บาท
+
                     </a>
                   </h4>
                   <h5>
@@ -572,6 +574,7 @@
 										}
 
 										?>
+										บาท
                   </h5>
                   <p class="card-text">
 										<?php
