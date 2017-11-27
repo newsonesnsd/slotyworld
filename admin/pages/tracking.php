@@ -236,7 +236,7 @@
                                             $sql = "SELECT i.invoiceid id, t.trackingnumber tracknum, st.description des
                                                     from Invoice i join Tracking t on t.invoiceid = i.invoiceid
 		                                            join StatusTracking st on st.statustrackingid = t.statustrackingid
-                                                    where st.description = 'Sending'
+                                                    where st.description = 'Pending'
                                                     order by id asc";
                                             $result = $conn->query($sql);
                                             if ($result->num_rows > 0) {
