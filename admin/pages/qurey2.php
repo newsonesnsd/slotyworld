@@ -181,7 +181,7 @@
                 <div class="col-lg-12">
                     <div class="panel panel-default">
                         <div class="panel-heading">
-                            
+
                         </div>
                         <!-- /.panel-heading -->
                         <div class="panel-body">
@@ -198,7 +198,8 @@
                                     </thead>
                                     <tbody>
                                         <?php
-                                            $sql = "select count(*) as countInvoice, u.userid , u.fname, u.lname from User u
+                                            $sql = "select u.userid, count(*) as countInvoice, caoncat(u.fname, u.lname) as Name
+                                            from User u
                                             join Invoice i on i.userid = u.userid
                                             group by i.userid;";
                                             $result = $conn->query($sql);
@@ -207,8 +208,8 @@
                                                 while($row = $result->fetch_assoc()) {
                                                     echo "<tr>";
                                                     echo "<td>" .$row["userid"]."</td>";
-                                                    echo "<td>" .$row["fname"]."</td>";
-                                                    echo "<td>" .$row["lname"]."</td>";
+                                                    echo "<td>" .$row["Name"]."</td>";
+                                                    // echo "<td>" .$row["lname"]."</td>";
                                                     echo "<td>" .$row["countInvoice"]."</td>";
                                                     echo "</tr>";
 
