@@ -56,7 +56,8 @@
             		</li>
             		<li class="nav-item">
 						<?php if(isset($_SESSION['wppa'])):?>
-						<span>Login as <?php echo $_SESSION['wppa']['username']; ?>(<a class="nav-link" href="logout.php">Logout</a>)</span>
+						<span>
+							(<a class="nav-link" href="logout.php">Logout</a>)</span>
 						<?php else: ?>
 						<a class="nav-link" href="login.php">Login</a>
 						<?php endif; ?>

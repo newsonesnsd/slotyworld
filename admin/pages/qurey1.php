@@ -212,7 +212,7 @@
                                         <?php
                                             $sql = "select u.fname, u.lname , i.buytime from User u
                                                     join Invoice i on u.userid = i.userid where u.roleId = 1
-                                                    and i.buytime between '2017-11-1' and '2017-11-15';
+                                                    and i.buytime between '2017-11-1' and '2017-11-26';
                                                     ";
                                             $result = $conn->query($sql);
                                             if ($result->num_rows > 0) {

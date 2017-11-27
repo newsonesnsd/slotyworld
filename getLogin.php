@@ -31,8 +31,12 @@ while ($data = $result->fetch_assoc()) {
     );
     $_SESSION['wppa'] = $wppa;
     // print_r($_SESSION['wppa']);
+    header('Location: admin/index.php');
+    $stmt->close();
+    $conn->close();
     break;
 }
+
 $stmt->close();
 // $sql = "select * from User U join Role R on U.roleid = R.roleid  where R.roleid = 'Admin'";
 // $result = $conn->query($sql);
@@ -44,6 +48,7 @@ $stmt->close();
 // }
 
 $conn->close();
+echo "Wrong Password</br>";
+echo "<a href=\"index.php\">Go Back</a>";
 
-header('Location: admin/index.php');
 ?>
