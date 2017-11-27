@@ -190,7 +190,7 @@
                                 <table class="table table-striped table-bordered table-hover">
                                     <thead>
                                         <tr>
-                                              <td>#</td>
+                                            <th>#</th>
                                             <th>Name</th>
                                             <th>Surname</th>
                                             <th>Email</th>
