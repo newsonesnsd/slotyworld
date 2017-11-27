@@ -163,7 +163,7 @@
             <div class="row">
                 <div class="col-lg-12">
                     <h1 class="page-header">
-                        จำนวนการสั่งซื้อสินค้า
+                        จำนวนการสั่งซื้อสินค้าของลูกค้า
                     </h1>
                 </div>
                 <!-- /.col-lg-12 -->
@@ -181,7 +181,7 @@
                 <div class="col-lg-12">
                     <div class="panel panel-default">
                         <div class="panel-heading">
-
+                            Customer Invoices
                         </div>
                         <!-- /.panel-heading -->
                         <div class="panel-body">
@@ -190,15 +190,14 @@
                                 <table class="table table-striped table-bordered table-hover">
                                     <thead>
                                         <tr>
-                                            <th>Userid</th>
-                                            <th>FirstName</th>
-                                            <th>Lastname</th>
+                                            <th>User ID</th>
+                                            <th>Name</th>
                                             <th>Total Invoice</th>
                                         </tr>
                                     </thead>
                                     <tbody>
                                         <?php
-                                            $sql = "select u.userid, count(*) as countInvoice, caoncat(u.fname, u.lname) as Name
+                                            $sql = "select u.userid, count(*) as countInvoice, u.fname as fname, u.lname as lname
                                             from User u
                                             join Invoice i on i.userid = u.userid
                                             group by i.userid;";
@@ -208,7 +207,8 @@
                                                 while($row = $result->fetch_assoc()) {
                                                     echo "<tr>";
                                                     echo "<td>" .$row["userid"]."</td>";
-                                                    echo "<td>" .$row["Name"]."</td>";
+                                                    echo "<td>" .$row["fname"];
+                                                    echo" ".$row["lname"]."</td>";
                                                     // echo "<td>" .$row["lname"]."</td>";
                                                     echo "<td>" .$row["countInvoice"]."</td>";
                                                     echo "</tr>";
