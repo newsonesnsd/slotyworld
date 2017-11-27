@@ -91,13 +91,12 @@ body, html {
       <div class="container">
 	<div id="login-box">
 		<div class="logo">
-			<img src="http://lorempixel.com/output/people-q-c-100-100-1.jpg" class="img img-responsive img-circle center-block"/>
 			<h1 class="logo-caption"><span class="tweak">L</span>ogin</h1>
 		</div><!-- /.logo -->
 		<div class="controls">
 			<form class="" action="getLogin.php" method="post">
                 <input type="text" id ="username" name="username" placeholder="Username" class="form-control" />
-    			<input type="text" id = "password" name="password" placeholder="Password" class="form-control" />
+    			<input type="password" id = "password" name="password" placeholder="Password" class="form-control" />
     			<button type="submit" class="btn btn-default btn-block btn-custom">Login</button>
 			</form>
       <button type="button" class="btn btn-default btn-block btn-custom" onclick="location.href='register.php';">Register</button>
