@@ -414,7 +414,6 @@
                                             <th>Details</th>
                                             <th>Prices</th>
                                             <th>Quantity</th>
-                                            <th>DSFSDF</th>
                                         </tr>
                                     </thead>
                                     <tbody>
