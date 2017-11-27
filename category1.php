@@ -146,7 +146,7 @@
                 <a href="#"><img class="card-img-top" src="http://35.163.12.144/slotyworld/assets/picture/hardware/fx-6300.jpg" alt=""></a>
 								<div class="card-body">
                   <h4 class="card-title">
-                    <a href="item1.html">
+                    <a href="item11.php">
 											<?php
 											//statement
 											$sql = "select productname from Product where productid = 10001";
@@ -161,6 +161,7 @@
 											?>
 										</a>
                   </h4>
+
                   <h5>
 										<?php
 										//statement
@@ -208,7 +209,7 @@
                 <a href="#"><img class="card-img-top" src="http://35.163.12.144/slotyworld/assets/picture/hardware/ssd-apacer.jpg" alt=""></a>
                 <div class="card-body">
                   <h4 class="card-title">
-                    <a href="#">
+                    <a href="item12.php">
 											<?php
 											//statement
 											$sql = "select productname from Product where productid = 10002";
@@ -236,6 +237,7 @@
 										}
 
 										?>
+										บาท
                   </h5>
                   <p class="card-text">
 										<?php
@@ -263,7 +265,7 @@
                 <a href="#"><img class="card-img-top" src="http://35.163.12.144/slotyworld/assets/picture/hardware/amd-rx-550.jpg" alt=""></a>
                 <div class="card-body">
                   <h4 class="card-title">
-                    <a href="#">
+                    <a href="item13.php">
 											<?php
 											//statement
 											$sql = "select productname from Product where productid = 10003";
@@ -291,6 +293,7 @@
 										}
 
 										?>
+										บาท
                   </h5>
                   <p class="card-text">
 										<?php
@@ -313,165 +316,7 @@
               </div>
             </div>
 
-            <div class="col-lg-4 col-md-6 mb-4">
-              <div class="card h-100">
-                <a href="#"><img class="card-img-top" src="http://placehold.it/700x400" alt=""></a>
-                <div class="card-body">
-                  <h4 class="card-title">
-                    <a href="#">
-											<?php
-											//statement
-											$sql = "select productname from Product where productid = 10004";
-											$result = $conn->query($sql);
-											if ($result->num_rows > 0) {
-													// output data of each row
-													while($row = $result->fetch_assoc()) {
-															echo $row["productname"];
-													}
-											}
 
-											?>
-                    </a>
-                  </h4>
-                  <h5>
-										<?php
-										//statement
-										$sql = "select price from Product where productid = 10004";
-										$result = $conn->query($sql);
-										if ($result->num_rows > 0) {
-												// output data of each row
-												while($row = $result->fetch_assoc()) {
-														echo $row["price"];
-												}
-										}
-
-										?>
-                  </h5>
-                  <p class="card-text">
-										<?php
-										//statement
-										$sql = "select details from Product where productid = 10004";
-										$result = $conn->query($sql);
-										if ($result->num_rows > 0) {
-												// output data of each row
-												while($row = $result->fetch_assoc()) {
-														echo $row["details"];
-												}
-										}
-
-										?>
-                  </p>
-                </div>
-                <div class="card-footer">
-                  <small class="text-muted">&#9733; &#9733; &#9733; &#9733; &#9734;</small>
-                </div>
-              </div>
-            </div>
-
-            <div class="col-lg-4 col-md-6 mb-4">
-              <div class="card h-100">
-                <a href="#"><img class="card-img-top" src="http://placehold.it/700x400" alt=""></a>
-                <div class="card-body">
-                  <h4 class="card-title">
-                    <a href="#">
-											<?php
-											//statement
-											$sql = "select productname from Product where productid = 10005";
-											$result = $conn->query($sql);
-											if ($result->num_rows > 0) {
-													// output data of each row
-													while($row = $result->fetch_assoc()) {
-															echo $row["productname"];
-													}
-											}
-
-											?>
-                    </a>
-                  </h4>
-                  <h5>
-										<?php
-										//statement
-										$sql = "select price from Product where productid = 10005";
-										$result = $conn->query($sql);
-										if ($result->num_rows > 0) {
-												// output data of each row
-												while($row = $result->fetch_assoc()) {
-														echo $row["price"];
-												}
-										}
-
-										?>
-                  </h5>
-                  <p class="card-text">
-										<?php
-										//statement
-										$sql = "select details from Product where productid = 10005";
-										$result = $conn->query($sql);
-										if ($result->num_rows > 0) {
-												// output data of each row
-												while($row = $result->fetch_assoc()) {
-														echo $row["details"];
-												}
-										}
-
-										?>
-                  </p>
-                </div>
-                <div class="card-footer">
-                  <small class="text-muted">&#9733; &#9733; &#9733; &#9733; &#9734;</small>
-                </div>
-              </div>
-            </div>
-
-            <div class="col-lg-4 col-md-6 mb-4">
-              <div class="card h-100">
-                <a href="#"><img class="card-img-top" src="http://placehold.it/700x400" alt=""></a>
-                <div class="card-body">
-                  <h4 class="card-title">
-                    <a href="#">
-											<?php
-											//statement
-											$sql = "select productname from Product where productid = 10006";
-											$result = $conn->query($sql);
-											if ($result->num_rows > 0) {
-													// output data of each row
-													while($row = $result->fetch_assoc()) {
-															echo $row["productname"];
-													}
-											}
-
-											?>
-                    </a>
-                  </h4>
-                  <h5>
-										<?php
-										//statement
-										$sql = "select price from Product where productid = 10006";
-										$result = $conn->query($sql);
-										if ($result->num_rows > 0) {
-												// output data of each row
-												while($row = $result->fetch_assoc()) {
-														echo $row["price"];
-												}
-										}
-
-										?>
-                  </h5>
-                  <p class="card-text">
-										<?php
-										//statement
-										$sql = "select details from Product where productid = 10006";
-										$result = $conn->query($sql);
-										if ($result->num_rows > 0) {
-												// output data of each row
-												while($row = $result->fetch_assoc()) {
-														echo $row["details"];
-												}
-										}
-
-										?>
-                  </p>
-                </div>
                 <div class="card-footer">
                   <small class="text-muted">&#9733; &#9733; &#9733; &#9733; &#9734;</small>
                 </div>

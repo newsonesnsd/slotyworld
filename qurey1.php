@@ -163,7 +163,17 @@
             <div class="row">
                 <div class="col-lg-12">
                     <h1 class="page-header">
-                        ข้อมูลลูกค้าที่ยังไม่มีรายการสั่งสินค้า
+                        <?php
+                            //statement
+                            $sql = "select categoryname from Category where categoryname = 'Others'";
+                            $result = $conn->query($sql);
+                            if ($result->num_rows > 0) {
+                                // output data of each row
+                                while($row = $result->fetch_assoc()) {
+                                    echo "Category: ".$row["categoryname"];
+                                }
+                            }
+                        ?>
                     </h1>
                 </div>
                 <!-- /.col-lg-12 -->
@@ -181,7 +191,7 @@
                 <div class="col-lg-12">
                     <div class="panel panel-default">
                         <div class="panel-heading">
-                            <!-- SQL Statement -->
+                            Hardware Stock Detail
                         </div>
                         <!-- /.panel-heading -->
                         <div class="panel-body">
@@ -190,55 +200,23 @@
                                 <table class="table table-striped table-bordered table-hover">
                                     <thead>
                                         <tr>
-                                              <td>#</td>
                                             <th>Name</th>
-                                            <th>Surname</th>
-                                            <th>Email</th>
-                                            <th>Gender</th>
-                                            <th>Date of Birth</th>
-                                            <th>Telephone</th>
-                                            <th>Address</th>
-                                            <th>City</th>
-                                            <th>Postcode</th>
-                                            <th>Password</th>
-                                            <th>Role ID</th>
-                                            <th>Invoice ID</th>
-                                            <th>Total Price</th>
                                             <th>Buytime</th>
-                                            <th>Description</th>
-                                            <th>userid</th>
-                                            <th>cartid</th>
                                         </tr>
                                     </thead>
                                     <tbody>
                                         <?php
-                                            $sql = "select * from User u
-                                            left join Invoice i on u.userid = i.userid
-                                            where u.roleid = 1
-                                            and i.invoiceid is null";
+                                            $sql = "select CONCAT(u.fname, u.lname) as name , buytime from User u
+                                            join Invoice i on u.userid = i.userid where u.roleId = 1 
+                                            and i.buytime between '2017-11-1' and '2017-11-15';";
                                             $result = $conn->query($sql);
                                             if ($result->num_rows > 0) {
                                                 // output data of each row
                                                 while($row = $result->fetch_assoc()) {
                                                     echo "<tr>";
-                                                    echo "<td>" .$row["userid"]."</td>";
-                                                    echo "<td>" .$row["fname"]."</td>";
-                                                    echo "<td>" .$row["lname"]."</td>";
-                                                    echo "<td>" .$row["email"]."</td>";
-                                                    echo "<td>" .$row["gender"]."</td>";
-                                                    echo "<td>" .$row["dob"]."</td>";
-                                                    echo "<td>" .$row["telno"]."</td>";
-                                                    echo "<td>" .$row["address"]."</td>";
-                                                    echo "<td>" .$row["city"]."</td>";
-                                                    echo "<td>" .$row["postcode"]."</td>";
-                                                    echo "<td>" .$row["password"]."</td>";
-                                                    echo "<td>" .$row["roleId"]."</td>";
-                                                    echo "<td>" .$row["invoiceid"]."</td>";
-                                                    echo "<td>" .$row["totalprice"]."</td>";
+                                                    echo "<td>" .$row["fname"].
+                                                    echo" ".$row[lname]."</td>";
                                                     echo "<td>" .$row["buytime"]."</td>";
-                                                    echo "<td>" .$row["description"]."</td>";
-                                                    echo "<td>" .$row["userid"]."</td>";
-                                                    echo "<td>" .$row["cartid"]."</td>";
                                                     echo "</tr>";
 
                                                 }

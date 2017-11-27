@@ -120,13 +120,13 @@
             </ol>
             <div class="carousel-inner" role="listbox">
               <div class="carousel-item active">
-                <img class="d-block img-fluid" src="D:\xampp\htdocs\slotyworld\picture\;an.jpg" alt="First slide">
+                <img class="d-block img-fluid" src="http://35.163.12.144/slotyworld/assets/picture/software/kaspersky-small office.jpg" alt="First slide">
               </div>
               <div class="carousel-item">
-                <img class="d-block img-fluid" src="http://placehold.it/900x350" alt="Second slide">
+                <img class="d-block img-fluid" src="http://35.163.12.144/slotyworld/assets/picture/software/bitdefender-plus- 2017.jpg" alt="Second slide">
               </div>
               <div class="carousel-item">
-                <img class="d-block img-fluid" src="http://placehold.it/900x350" alt="Third slide">
+                <img class="d-block img-fluid" src="http://35.163.12.144/slotyworld/assets/picture/software/eset-nod32-antivirus.jpg" alt="Third slide">
               </div>
             </div>
             <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
@@ -146,7 +146,7 @@
                 <a href="#"><img class="card-img-top" src="http://35.163.12.144/slotyworld/assets/picture/software/kaspersky-small office.jpg" alt=""></a>
                 <div class="card-body">
                   <h4 class="card-title">
-                    <a href="item1.html">
+                    <a href="item21.php">
 											<?php
 											//statement
 											$sql = "select productname from Product where productid = 20001";
@@ -208,7 +208,7 @@
                 <a href="#"><img class="card-img-top" src="http://35.163.12.144/slotyworld/assets/picture/software/bitdefender-plus- 2017.jpg" alt=""></a>
                 <div class="card-body">
                   <h4 class="card-title">
-                    <a href="#">
+                    <a href="item22.php">
 											<?php
 											//statement
 											$sql = "select productname from Product where productid = 20002";
@@ -236,6 +236,7 @@
 										}
 
 										?>
+										บาท
                   </h5>
                   <p class="card-text">
 										<?php
@@ -263,7 +264,7 @@
                 <a href="#"><img class="card-img-top" src="http://35.163.12.144/slotyworld/assets/picture/software/eset-nod32-antivirus.jpg" alt=""></a>
                 <div class="card-body">
                   <h4 class="card-title">
-                    <a href="#">
+                    <a href="item23.php">
 											<?php
 											//statement
 											$sql = "select productname from Product where productid = 20003";
@@ -276,6 +277,7 @@
 											}
 
 											?>
+											บาท
                     </a>
                   </h4>
                   <h5>
